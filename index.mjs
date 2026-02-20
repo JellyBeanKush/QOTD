@@ -25,7 +25,7 @@ async function postToDiscord(quoteData) {
     const discordPayload = {
         username: "Quote of the Day",
         embeds: [{
-            title: `💬 DAILY INSPIRATION: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles' })}`,
+            // Title removed for a cleaner look
             description: `## **"${quoteData.quote}"**\n\n— ***${quoteData.author}***\n\n**The Meaning**\n${quoteData.context}\n\n🔗 [Learn more about ${quoteData.author}](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
             image: { url: authorImg }
