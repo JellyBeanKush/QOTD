@@ -4,7 +4,7 @@ import fs from 'fs';
 
 const CONFIG = {
     GEMINI_KEY: process.env.GEMINI_API_KEY,
-    DISCORD_URL: "https://discord.com/api/webhooks/1474465221006590063/IvnggafEtAywFbwIkdvRYEFWKge7FMwKzLmFHcqVYgJLf-aUfZkidEd9voSSfVwcatCB",
+    DISCORD_URL: process.env.DISCORD_WEBHOOK_URL, // This pulls it safely from Secrets
     SAVE_FILE: 'current_quote.txt',
     HISTORY_FILE: 'quote_history.json'
 };
