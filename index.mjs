@@ -16,8 +16,12 @@ async function getAuthorImage(authorName) {
         const wikiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(authorName)}`;
         const response = await fetch(wikiUrl);
         const data = await response.json();
+        // Returns the high-res original image if available
         return data.originalimage ? data.originalimage.source : null;
-    } catch (e) { return null; }
+    } catch (e) { 
+        console.log("Could not find Wiki image for:", authorName);
+        return null; 
+    }
 }
 
 async function postToDiscord(quoteData) {
@@ -25,23 +29,30 @@ async function postToDiscord(quoteData) {
     const discordPayload = {
         username: "Quote of the Day",
         embeds: [{
+            // No title or date per your request
             description: `## **"${quoteData.quote}"**\n\n— ***${quoteData.author}***\n\n**The Meaning**\n${quoteData.context}\n\n🔗 [Learn more about ${quoteData.author}](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
             image: { url: authorImg }
         }]
     };
-    await fetch(CONFIG.DISCORD_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(discordPayload) });
+    await fetch(CONFIG.DISCORD_URL, { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(discordPayload) 
+    });
 }
 
 async function main() {
+    // Check if we already posted today to prevent double-spending API credits
     if (fs.existsSync(CONFIG.SAVE_FILE)) {
         try {
             const saved = JSON.parse(fs.readFileSync(CONFIG.SAVE_FILE, 'utf8'));
             if (saved.generatedDate === today) {
+                console.log("Already generated for today. Posting saved content...");
                 await postToDiscord(saved);
                 return;
             }
-        } catch (e) {}
+        } catch (e) { console.log("Starting fresh..."); }
     }
 
     let historyData = [];
@@ -52,23 +63,31 @@ async function main() {
 
     const genAI = new GoogleGenerativeAI(CONFIG.GEMINI_KEY);
     
-    // Explicitly point to the v1beta endpoint for the Gemini 3 preview model
-    const model = genAI.getGenerativeModel(
-        { model: "gemini-3-flash-preview" },
-        { apiVersion: "v1beta" }
-    );
+    // Using the 2.0-flash alias to ensure v1 endpoint compatibility and avoid 404
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     
-    const prompt = `Provide a powerful, attributed quote. JSON ONLY: {"quote": "text", "author": "Full Name", "sourceUrl": "URL", "context": "1 sentence impact"}. DO NOT use: ${usedAuthors.join(", ")}`;
+    const prompt = `Provide a powerful, famous quote. JSON ONLY: {"quote": "text", "author": "Full Name", "sourceUrl": "Wikipedia URL", "context": "1 sentence on why it matters"}. DO NOT use these authors: ${usedAuthors.join(", ")}`;
     
-    const result = await model.generateContent(prompt);
-    const quoteData = JSON.parse(result.response.text().replace(/```json|```/g, "").trim());
+    try {
+        const result = await model.generateContent(prompt);
+        const text = result.response.text().replace(/```json|```/g, "").trim();
+        const quoteData = JSON.parse(text);
 
-    if (quoteData) {
-        quoteData.generatedDate = today;
-        fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData));
-        historyData.unshift(quoteData); 
-        fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
-        await postToDiscord(quoteData);
+        if (quoteData) {
+            quoteData.generatedDate = today;
+            fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData));
+            
+            historyData.unshift(quoteData); 
+            // Keep history to last 30 entries
+            fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 30), null, 2));
+            
+            await postToDiscord(quoteData);
+            console.log("Success! Quote posted to Discord.");
+        }
+    } catch (error) {
+        console.error("API Error:", error.message);
+        process.exit(1);
     }
 }
+
 main();
