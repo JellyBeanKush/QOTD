@@ -27,12 +27,25 @@ async function postToDiscord(quoteData) {
     const discordPayload = {
         username: "Quote of the Day",
         embeds: [{
-            description: `## **"${quoteData.quote}"**\n\n— ***${quoteData.author}***\n\n**The Meaning**\n${quoteData.context}\n\n🔗 [Learn more about ${quoteData.author}](${quoteData.sourceUrl})`,
+            // Streamlined description: Quote followed by italicized author
+            description: `## **"${quoteData.quote}"**\n\n— *${quoteData.author}*\n\n🔗 [Learn more about the author](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
-            image: { url: authorImg }
+            // Changed from 'image' to 'thumbnail' for the smaller side-profile look
+            thumbnail: { 
+                url: authorImg 
+            }
         }]
     };
-    await fetch(CONFIG.DISCORD_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(discordPayload) });
+    
+    const response = await fetch(CONFIG.DISCORD_URL, { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(discordPayload) 
+    });
+
+    if (!response.ok) {
+        console.error("Discord Post Failed:", await response.text());
+    }
 }
 
 async function generateWithRetry(modelName, prompt, retries = 3) {
