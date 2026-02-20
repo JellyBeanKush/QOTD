@@ -4,7 +4,7 @@
   "type": "module",
   "main": "index.mjs",
   "dependencies": {
-    "@google/generative-ai": "^0.2.1",
+    "@google/generative-ai": "latest",
     "node-fetch": "^3.3.2"
   }
 }
