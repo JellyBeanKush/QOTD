@@ -25,7 +25,6 @@ async function getAuthorImage(authorName) {
 async function postToDiscord(quoteData) {
     const authorImg = await getAuthorImage(quoteData.author);
     const discordPayload = {
-        username: "Quote of the Day",
         embeds: [{
             // Description uses a blank line and a small link to match thumbnail height
             description: `**"${quoteData.quote}"**\n\n— *${quoteData.author}*\n\u200B\n[Learn more about the author](${quoteData.sourceUrl})`,
