@@ -4,7 +4,7 @@ import fs from 'fs';
 
 const CONFIG = {
     GEMINI_KEY: process.env.GEMINI_API_KEY,
-    DISCORD_URL: process.env.DISCORD_WEBHOOK_URL, // This pulls it safely from Secrets
+    DISCORD_URL: process.env.DISCORD_WEBHOOK_URL,
     SAVE_FILE: 'current_quote.txt',
     HISTORY_FILE: 'quote_history.json'
 };
@@ -25,7 +25,6 @@ async function postToDiscord(quoteData) {
     const discordPayload = {
         username: "Quote of the Day",
         embeds: [{
-            // Title removed for a cleaner look
             description: `## **"${quoteData.quote}"**\n\n— ***${quoteData.author}***\n\n**The Meaning**\n${quoteData.context}\n\n🔗 [Learn more about ${quoteData.author}](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
             image: { url: authorImg }
@@ -39,11 +38,10 @@ async function main() {
         try {
             const saved = JSON.parse(fs.readFileSync(CONFIG.SAVE_FILE, 'utf8'));
             if (saved.generatedDate === today) {
-                console.log("Quote already generated for today. Posting to Discord...");
                 await postToDiscord(saved);
                 return;
             }
-        } catch (e) { console.log("Initializing..."); }
+        } catch (e) {}
     }
 
     let historyData = [];
@@ -53,9 +51,10 @@ async function main() {
     const usedAuthors = historyData.map(h => h.author.toLowerCase());
 
     const genAI = new GoogleGenerativeAI(CONFIG.GEMINI_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+    // USING GEMINI 3 FLASH
+    const model = genAI.getGenerativeModel({ model: "gemini-3-flash" });
     
-    const prompt = `Provide a powerful, attributed quote. Output JSON ONLY: {"quote": "text", "author": "Full Name", "sourceUrl": "URL", "context": "1 sentence impact"}. DO NOT use these authors: ${usedAuthors.join(", ")}`;
+    const prompt = `Provide a powerful, attributed quote. JSON ONLY: {"quote": "text", "author": "Full Name", "sourceUrl": "URL", "context": "1 sentence impact"}. DO NOT use: ${usedAuthors.join(", ")}`;
     
     const result = await model.generateContent(prompt);
     const quoteData = JSON.parse(result.response.text().replace(/```json|```/g, "").trim());
@@ -66,7 +65,6 @@ async function main() {
         historyData.unshift(quoteData); 
         fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
         await postToDiscord(quoteData);
-        console.log(`✅ Quote by ${quoteData.author} posted.`);
     }
 }
 main();
