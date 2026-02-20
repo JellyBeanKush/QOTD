@@ -17,9 +17,10 @@ jobs:
           node-version: '20'
       - name: Install Dependencies
         run: npm install
-      - name: Run Quote Script
+      - name: Run Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} # Add this line
         run: node index.mjs
       - name: Commit and Push
         run: |
