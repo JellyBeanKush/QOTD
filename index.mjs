@@ -51,8 +51,12 @@ async function main() {
     const usedAuthors = historyData.map(h => h.author.toLowerCase());
 
     const genAI = new GoogleGenerativeAI(CONFIG.GEMINI_KEY);
-    // STABLE 2026 PREVIEW NAME
-    const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+    
+    // Explicitly point to the v1beta endpoint for the Gemini 3 preview model
+    const model = genAI.getGenerativeModel(
+        { model: "gemini-3-flash-preview" },
+        { apiVersion: "v1beta" }
+    );
     
     const prompt = `Provide a powerful, attributed quote. JSON ONLY: {"quote": "text", "author": "Full Name", "sourceUrl": "URL", "context": "1 sentence impact"}. DO NOT use: ${usedAuthors.join(", ")}`;
     
