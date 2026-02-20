@@ -1,0 +1,30 @@
+name: Daily Quote Bot
+
+on:
+  schedule:
+    # 14:07 UTC is 6:07 AM Pacific Standard Time
+    - cron: '7 14 * * *'
+  workflow_dispatch: # Allows you to test it manually right now
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Quote Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node index.mjs
+      - name: Commit and Push
+        run: |
+          git config --global user.name "QuoteBot"
+          git config --global user.email "actions@github.com"
+          git add current_quote.txt quote_history.json
+          git commit -m "Update daily quote files [skip ci]" || echo "No changes to commit"
+          git push
