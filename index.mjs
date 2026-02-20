@@ -11,59 +11,53 @@ const CONFIG = {
 
 const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Los_Angeles' });
 
+async function getAuthorImage(authorName) {
+    try {
+        const wikiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(authorName)}`;
+        const response = await fetch(wikiUrl);
+        const data = await response.json();
+        return data.originalimage ? data.originalimage.source : null;
+    } catch (e) { return null; }
+}
+
 async function postToDiscord(quoteData) {
-    // We use the imagePrompt to tell Discord/Users what the vibe of the quote is
+    const authorImg = await getAuthorImage(quoteData.author);
     const discordPayload = {
         username: "Quote of the Day",
         embeds: [{
             title: `💬 DAILY INSPIRATION: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles' })}`,
-            description: `## **"${quoteData.quote}"**\n\n— ***${quoteData.author}***\n\n**The Meaning**\n${quoteData.context}\n\n🔗 [Learn more about this quote](${quoteData.sourceUrl})`,
+            description: `## **"${quoteData.quote}"**\n\n— ***${quoteData.author}***\n\n**The Meaning**\n${quoteData.context}\n\n🔗 [Learn more about ${quoteData.author}](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
-            footer: { text: `Visual Vibe: ${quoteData.imagePrompt}` }
+            image: { url: authorImg }
         }]
     };
-
-    await fetch(CONFIG.DISCORD_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(discordPayload)
-    });
+    await fetch(CONFIG.DISCORD_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(discordPayload) });
 }
 
 async function main() {
     if (fs.existsSync(CONFIG.SAVE_FILE)) {
         try {
             const saved = JSON.parse(fs.readFileSync(CONFIG.SAVE_FILE, 'utf8'));
-            if ((saved.generatedDate || saved.date) === today) {
-                console.log(`♻️ Quote for ${today} found. Updating Discord...`);
+            if (saved.generatedDate === today) {
+                console.log("Quote already generated for today. Posting to Discord...");
                 await postToDiscord(saved);
                 return;
             }
-        } catch (e) { console.log("Initializing format..."); }
+        } catch (e) { console.log("Initializing..."); }
     }
 
     let historyData = [];
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
-        try {
-            historyData = JSON.parse(fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8'));
-        } catch (e) { console.log("History initialized."); }
+        try { historyData = JSON.parse(fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8')); } catch (e) {}
     }
     const usedAuthors = historyData.map(h => h.author.toLowerCase());
 
-    console.log(`🚀 Generating high-quality attributed quote for ${today}...`);
     const genAI = new GoogleGenerativeAI(CONFIG.GEMINI_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
-
-    const PROMPT = `Provide a powerful quote with strict attribution.
-    JSON ONLY: {
-      "quote": "The quote text",
-      "author": "Full Name of Author",
-      "sourceUrl": "A real URL to a biography or the source of the quote (Goodreads, Wikipedia, etc)",
-      "context": "Why this matters today.",
-      "imagePrompt": "A 1-sentence description of a motivational AI-generated image that matches this quote's theme."
-    }`;
     
-    const result = await model.generateContent(PROMPT + ` DO NOT use these authors: ${usedAuthors.join(", ")}`);
+    const prompt = `Provide a powerful, attributed quote. Output JSON ONLY: {"quote": "text", "author": "Full Name", "sourceUrl": "URL", "context": "1 sentence impact"}. DO NOT use these authors: ${usedAuthors.join(", ")}`;
+    
+    const result = await model.generateContent(prompt);
     const quoteData = JSON.parse(result.response.text().replace(/```json|```/g, "").trim());
 
     if (quoteData) {
@@ -72,7 +66,7 @@ async function main() {
         historyData.unshift(quoteData); 
         fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
         await postToDiscord(quoteData);
-        console.log(`✅ Quote by ${quoteData.author} posted with source link!`);
+        console.log(`✅ Quote by ${quoteData.author} posted.`);
     }
 }
 main();
