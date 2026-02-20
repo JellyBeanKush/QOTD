@@ -1,10 +1,7 @@
 {
-  "name": "daily-discord-bot",
-  "version": "1.0.0",
   "type": "module",
-  "main": "index.mjs",
   "dependencies": {
-    "@google/generative-ai": "latest",
+    "@google/generative-ai": "^0.22.0",
     "node-fetch": "^3.3.2"
   }
 }
