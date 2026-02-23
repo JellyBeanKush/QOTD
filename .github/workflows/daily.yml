@@ -4,24 +4,30 @@ on:
   schedule:
     # 14:07 UTC is 6:07 AM Pacific Standard Time
     - cron: '7 14 * * *'
-  workflow_dispatch: # Allows you to test it manually right now
+  workflow_dispatch: # Allows you to test it manually
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Essential for the bot to save files back to your repo
     steps:
       - uses: actions/checkout@v4
+      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          
       - name: Install Dependencies
         run: npm install
+        
       - name: Run Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} # Add this line
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: node index.mjs
+
       - name: Commit and Push
         run: |
           git config --global user.name "QuoteBot"
