@@ -11,9 +11,9 @@ const CONFIG = {
     BACKUP_MODEL: "gemini-1.5-flash-latest"
 };
 
-// Creates: "Feb 23 2026" (No Monday/Tuesday)
-const options = { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' };
-const todayFormatted = new Date().toLocaleDateString('en-US', options).replace(/,/g, ''); 
+// This creates the exact format: "February 23, 2026"
+const options = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' };
+const todayFormatted = new Date().toLocaleDateString('en-US', options); 
 
 async function getAuthorImage(authorName) {
     try {
@@ -28,7 +28,7 @@ async function postToDiscord(quoteData) {
     const authorImg = await getAuthorImage(quoteData.author);
     const discordPayload = {
         embeds: [{
-            // SINGLE LINE HEADER: "Quote of the Day - Feb 23 2026"
+            // Header is strictly one line: "Quote of the Day - February 23, 2026"
             title: `Quote of the Day - ${todayFormatted}`,
             description: `**"${quoteData.quote}"**\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
@@ -62,6 +62,7 @@ async function generateWithRetry(modelName, prompt, retries = 3) {
 async function main() {
     let historyData = [];
     
+    // 1. Load History & Repair if needed
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
         try { 
             const content = fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8');
@@ -72,6 +73,7 @@ async function main() {
         }
     }
 
+    // 2. Already Posted Check
     if (historyData.length > 0 && historyData[0].generatedDate === todayFormatted) {
         console.log("Already posted today.");
         return;
@@ -79,6 +81,7 @@ async function main() {
 
     const usedAuthors = historyData.slice(0, 50).map(h => h.author);
 
+    // 3. Generate Quote (Gemini 2.5 Flash)
     const prompt = `Provide a famous, inspiring quote. JSON ONLY: {
       "quote": "text", 
       "author": "Full Name", 
@@ -96,8 +99,10 @@ async function main() {
         const quoteData = JSON.parse(responseText);
         quoteData.generatedDate = todayFormatted;
         
+        // 4. Update current_quote.txt (For Mix It Up)
         fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData, null, 2));
         
+        // 5. Update History
         historyData.unshift(quoteData);
         fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
         
