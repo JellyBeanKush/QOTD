@@ -7,11 +7,12 @@ const CONFIG = {
     DISCORD_URL: process.env.DISCORD_WEBHOOK_URL,
     SAVE_FILE: 'current_quote.txt',
     HISTORY_FILE: 'quote_history.json',
-    PRIMARY_MODEL: "gemini-3-flash-preview",
-    BACKUP_MODEL: "gemini-1.5-flash"
+    PRIMARY_MODEL: "gemini-2.5-flash", 
+    BACKUP_MODEL: "gemini-1.5-flash-latest"
 };
 
-const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Los_Angeles' });
+// Matches the "Mon Feb 23 2026" format used in WOTD
+const todayFormatted = new Date().toDateString(); 
 
 async function getAuthorImage(authorName) {
     try {
@@ -26,8 +27,8 @@ async function postToDiscord(quoteData) {
     const authorImg = await getAuthorImage(quoteData.author);
     const discordPayload = {
         embeds: [{
-            // Description uses a blank line and a small link to match thumbnail height
-            description: `**"${quoteData.quote}"**\n\n— *${quoteData.author}*\n\u200B\n[Learn more about the author](${quoteData.sourceUrl})`,
+            title: `Quote of the Day - ${todayFormatted}`,
+            description: `**"${quoteData.quote}"**\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
             thumbnail: { url: authorImg }
         }]
@@ -49,58 +50,65 @@ async function generateWithRetry(modelName, prompt, retries = 3) {
             const result = await model.generateContent(prompt);
             return result.response.text().replace(/```json|```/g, "").trim();
         } catch (error) {
-            if (error.message.includes("503") || error.message.includes("429")) {
-                console.log(`Model ${modelName} busy. Retry ${i + 1}/${retries}...`);
-                await new Promise(r => setTimeout(r, 5000));
-            } else { throw error; }
+            if (i < retries - 1) await new Promise(r => setTimeout(r, 5000));
+            else throw error;
         }
     }
     throw new Error("Retries exhausted.");
 }
 
 async function main() {
-    // 1. Check if already posted
-    if (fs.existsSync(CONFIG.SAVE_FILE)) {
-        try {
-            const saved = JSON.parse(fs.readFileSync(CONFIG.SAVE_FILE, 'utf8'));
-            if (saved.generatedDate === today) {
-                console.log("Already posted today.");
-                return;
-            }
-        } catch (e) {}
-    }
-
-    // 2. Load History
     let historyData = [];
+    
+    // 1. Load History with Clean-up
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
-        try { historyData = JSON.parse(fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8')); } catch (e) {}
+        try { 
+            const content = fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8');
+            const parsed = JSON.parse(content);
+            historyData = Array.isArray(parsed) ? parsed.filter(item => typeof item === 'object' && item !== null) : [];
+        } catch (e) { 
+            console.log("Repairing history file...");
+            historyData = [];
+        }
     }
-    const usedAuthors = historyData.slice(0, 20).map(h => h.author);
 
-    // 3. Generate Quote
-    const prompt = `Provide a famous quote. JSON ONLY: {"quote": "text", "author": "Name", "sourceUrl": "Wikipedia URL"}. DO NOT use: ${usedAuthors.join(", ")}`;
+    // 2. Prevent Double Posting
+    if (historyData.length > 0 && historyData[0].generatedDate === todayFormatted) {
+        console.log("Already posted today.");
+        return;
+    }
+
+    const usedAuthors = historyData.slice(0, 50).map(h => h.author);
+
+    // 3. Generate Quote with 2.5 Flash
+    const prompt = `Provide a famous, inspiring quote. JSON ONLY: {
+      "quote": "text", 
+      "author": "Full Name", 
+      "sourceUrl": "Wikipedia URL"
+    }. DO NOT use these authors: ${usedAuthors.join(", ")}`;
     
     let responseText;
     try {
         responseText = await generateWithRetry(CONFIG.PRIMARY_MODEL, prompt);
     } catch (e) {
-        console.log("Switching to backup model...");
         responseText = await generateWithRetry(CONFIG.BACKUP_MODEL, prompt);
     }
 
-    // 4. Save and Post
     try {
         const quoteData = JSON.parse(responseText);
-        quoteData.generatedDate = today;
+        quoteData.generatedDate = todayFormatted;
         
-        fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData));
+        // 4. Update current_quote.txt (Overwrites for Mix It Up)
+        fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData, null, 2));
+        
+        // 5. Update History (Adds to top)
         historyData.unshift(quoteData);
-        fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 50), null, 2));
+        fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
         
         await postToDiscord(quoteData);
-        console.log("Successfully posted!");
+        console.log(`Success: Posted quote by ${quoteData.author}`);
     } catch (err) {
-        console.error("Critical Error:", err.message);
+        console.error("Critical JSON Error:", err.message);
         process.exit(1);
     }
 }
