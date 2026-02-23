@@ -11,8 +11,9 @@ const CONFIG = {
     BACKUP_MODEL: "gemini-1.5-flash-latest"
 };
 
-// Matches the "Mon Feb 23 2026" format used in WOTD
-const todayFormatted = new Date().toDateString(); 
+// Creates: "Feb 23 2026" (No Monday/Tuesday)
+const options = { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' };
+const todayFormatted = new Date().toLocaleDateString('en-US', options).replace(/,/g, ''); 
 
 async function getAuthorImage(authorName) {
     try {
@@ -27,6 +28,7 @@ async function postToDiscord(quoteData) {
     const authorImg = await getAuthorImage(quoteData.author);
     const discordPayload = {
         embeds: [{
+            // SINGLE LINE HEADER: "Quote of the Day - Feb 23 2026"
             title: `Quote of the Day - ${todayFormatted}`,
             description: `**"${quoteData.quote}"**\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
             color: 0xf1c40f,
@@ -60,19 +62,16 @@ async function generateWithRetry(modelName, prompt, retries = 3) {
 async function main() {
     let historyData = [];
     
-    // 1. Load History with Clean-up
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
         try { 
             const content = fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8');
             const parsed = JSON.parse(content);
             historyData = Array.isArray(parsed) ? parsed.filter(item => typeof item === 'object' && item !== null) : [];
         } catch (e) { 
-            console.log("Repairing history file...");
             historyData = [];
         }
     }
 
-    // 2. Prevent Double Posting
     if (historyData.length > 0 && historyData[0].generatedDate === todayFormatted) {
         console.log("Already posted today.");
         return;
@@ -80,7 +79,6 @@ async function main() {
 
     const usedAuthors = historyData.slice(0, 50).map(h => h.author);
 
-    // 3. Generate Quote with 2.5 Flash
     const prompt = `Provide a famous, inspiring quote. JSON ONLY: {
       "quote": "text", 
       "author": "Full Name", 
@@ -98,15 +96,13 @@ async function main() {
         const quoteData = JSON.parse(responseText);
         quoteData.generatedDate = todayFormatted;
         
-        // 4. Update current_quote.txt (Overwrites for Mix It Up)
         fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData, null, 2));
         
-        // 5. Update History (Adds to top)
         historyData.unshift(quoteData);
         fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
         
         await postToDiscord(quoteData);
-        console.log(`Success: Posted quote by ${quoteData.author}`);
+        console.log(`Success: Posted ${quoteData.author}`);
     } catch (err) {
         console.error("Critical JSON Error:", err.message);
         process.exit(1);
