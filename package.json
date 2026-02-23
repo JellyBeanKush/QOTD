@@ -1,7 +1,17 @@
 {
+  "name": "quote-bot",
+  "version": "1.0.0",
+  "description": "Daily Quote bot for HoneyBearSquish Discord",
+  "main": "index.mjs",
   "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
   "dependencies": {
-    "@google/generative-ai": "^0.22.0",
+    "@google/generative-ai": "^0.21.0",
     "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
