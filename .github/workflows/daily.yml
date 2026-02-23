@@ -1,37 +1,32 @@
-name: Daily Quote Bot
+name: Daily Zodiac Bot
 
 on:
   schedule:
-    # 14:07 UTC is 6:07 AM Pacific Standard Time
-    - cron: '7 14 * * *'
-  workflow_dispatch: # Allows you to test it manually
+    - cron: '15 14 * * *' # 6:15 AM PST
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Essential for the bot to save files back to your repo
+      contents: write
     steps:
       - uses: actions/checkout@v4
-      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
       - name: Install Dependencies
         run: npm install
-        
       - name: Run Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: node index.mjs
-
+        run: node zodiac.mjs
       - name: Commit and Push
         run: |
-          git config --global user.name "QuoteBot"
+          git config --global user.name "ZodiacBot"
           git config --global user.email "actions@github.com"
-          git add current_quote.txt quote_history.json
-          git commit -m "Update daily quote files [skip ci]" || echo "No changes to commit"
+          git add current-zodiac.txt zodiac-history.json
+          git commit -m "Update daily zodiacs [skip ci]" || echo "No changes to commit"
           git push
