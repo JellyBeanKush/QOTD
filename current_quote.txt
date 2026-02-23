@@ -1,6 +1,1 @@
-{
-  "quote": "You may not control all the events that happen to you, but you can decide not to be reduced by them.",
-  "author": "Maya Angelou",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Maya_Angelou",
-  "generatedDate": "Mon Feb 23 2026"
-}
+
