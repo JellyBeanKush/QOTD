@@ -104,7 +104,7 @@ async function main() {
         
         // 5. Update History
         historyData.unshift(quoteData);
-        fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
+        fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(history, null, 2));
         
         await postToDiscord(quoteData);
         console.log(`Success: Posted ${quoteData.author}`);
