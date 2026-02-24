@@ -1,6 +1,1 @@
-{
-  "quote": "Be the change that you wish to see in the world.",
-  "author": "Mahatma Gandhi",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
-  "generatedDate": "February 24, 2026"
-}
+
