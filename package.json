@@ -1,17 +1,11 @@
 {
-  "name": "quote-bot",
+  "name": "qotd-bot",
   "version": "1.0.0",
-  "description": "Daily Quote bot for HoneyBearSquish Discord",
+  "description": "Quote of the Day Bot",
   "main": "index.mjs",
   "type": "module",
-  "scripts": {
-    "start": "node index.mjs"
-  },
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
+    "@google/generative-ai": "^0.2.0",
     "node-fetch": "^3.3.2"
-  },
-  "engines": {
-    "node": ">=20.0.0"
   }
 }
