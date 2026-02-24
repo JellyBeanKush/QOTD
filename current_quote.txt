@@ -1,6 +1,6 @@
 {
-  "quote": "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
-  "author": "Martin Luther King Jr.",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
-  "generatedDate": "February 23, 2026"
+  "quote": "Be the change that you wish to see in the world.",
+  "author": "Mahatma Gandhi",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
+  "generatedDate": "February 24, 2026"
 }
