@@ -14,29 +14,15 @@ const CONFIG = {
 const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles' };
 const displayDate = new Date().toLocaleDateString('en-US', options);
 
-// This function fixes the "Wikipedia File Page" issue you saw in your screenshot
-function getRawImageUrl(url) {
-    if (!url) return "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000";
-    
-    // If the AI gives a Wikipedia "File:" page, we try to point it to a high-res fallback 
-    // because Discord cannot render HTML pages as images.
-    if (url.includes("wikipedia.org/wiki/File:") || !url.match(/\.(jpg|jpeg|png|webp)$/i)) {
-        console.log("AI provided a webpage link. Using a high-quality placeholder to keep the MLK look.");
-        return "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000";
-    }
-    return url;
-}
-
 async function postToDiscord(quoteData) {
-    const finalImage = getRawImageUrl(quoteData.imageUrl);
-
+    // This ensures we use the "thumbnail" field for the MLK look (top-right image)
     const discordPayload = {
         embeds: [{
             title: `Quote of the Day - ${displayDate}`,
             description: `"${quoteData.quote}"\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
             color: 0xf1c40f, 
             thumbnail: { 
-                url: finalImage // This puts it in the top-right corner like the MLK post
+                url: quoteData.imageUrl 
             }
         }]
     };
@@ -56,7 +42,7 @@ async function generateWithRetry(modelName, prompt) {
         try {
             console.log(`Attempt ${i + 1} with ${modelName}...`);
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Gemini timed out')), 30000)
+                setTimeout(() => reject(new Error('Gemini API timed out')), 30000)
             );
 
             const result = await Promise.race([
@@ -66,7 +52,7 @@ async function generateWithRetry(modelName, prompt) {
 
             return result.response.text().replace(/```json|```/g, "").trim();
         } catch (error) {
-            console.log(`Error: ${error.message}`);
+            console.log(`Attempt ${i + 1} failed: ${error.message}`);
             if (i < 2) await new Promise(r => setTimeout(r, 5000));
         }
     }
@@ -84,7 +70,7 @@ async function main() {
 
     const usedAuthors = historyData.slice(0, 50).map(h => h.author);
 
-    const prompt = `Provide an inspiring Quote of the Day from a historical figure.
+    const prompt = `Provide an inspiring Quote of the Day from a famous historical figure.
     JSON ONLY: {
       "quote": "The quote text",
       "author": "Author Name",
@@ -92,10 +78,10 @@ async function main() {
       "imageUrl": "DIRECT RAW IMAGE LINK"
     }.
     CRITICAL IMAGE RULES:
-    1. The imageUrl MUST be a direct link to a raw file (ending in .jpg or .png).
-    2. NEVER provide a link to a Wikipedia 'File:' page or any .html page.
-    3. Look for links starting with 'https://upload.wikimedia.org/'.
-    4. If no raw .jpg link exists, use this fallback: https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000
+    1. The imageUrl MUST be a direct link to a raw file ending in .jpg or .png.
+    2. NEVER use a link containing "/wiki/File:" - these are web pages and do not work.
+    3. Use direct 'upload.wikimedia.org' links.
+    4. If no direct raw file is found, use a high-quality portrait from Unsplash: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop
     DO NOT use these authors: ${usedAuthors.join(", ")}`;
 
     try {
@@ -103,15 +89,21 @@ async function main() {
         let responseText = await generateWithRetry(CONFIG.PRIMARY_MODEL, prompt);
         
         if (!responseText) {
-            console.log("Trying backup model...");
+            console.log("Primary model failed, trying backup...");
             responseText = await generateWithRetry(CONFIG.BACKUP_MODEL, prompt);
         }
 
         if (responseText) {
             const quoteData = JSON.parse(responseText);
 
+            // Clean up the URL just in case Gemini ignored the instructions
+            if (quoteData.imageUrl.includes("/wiki/File:")) {
+                console.log("AI provided a webpage link. Overriding with a portrait fallback.");
+                quoteData.imageUrl = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
+            }
+
             if (historyData.length > 0 && historyData[0].quote === quoteData.quote) {
-                console.log("Duplicate quote.");
+                console.log("Duplicate detected. Skipping.");
                 return;
             }
 
@@ -120,7 +112,7 @@ async function main() {
             fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
 
             await postToDiscord(quoteData);
-            console.log("Successfully posted to Discord with image logic fixed.");
+            console.log("Success! Posted to Discord.");
         }
     } catch (err) {
         console.error("Critical Error:", err.message);
