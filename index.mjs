@@ -17,11 +17,11 @@ const displayDate = new Date().toLocaleDateString('en-US', options);
 async function postToDiscord(quoteData) {
     const discordPayload = {
         embeds: [{
-            title: `Quote of the Day — ${displayDate}`,
-            description: `## "${quoteData.quote}"\n\n— **${quoteData.author}**\n\n[Learn more about the author](${quoteData.sourceUrl})`,
-            color: 0xf1c40f, 
-            image: { 
-                url: quoteData.imageUrl 
+            title: `Quote of the Day - ${displayDate}`, // Standard hyphen
+            description: `"${quoteData.quote}"\n\n— ${quoteData.author}\n\n[Learn more about the author](${quoteData.sourceUrl})`,
+            color: 0xf1c40f, // Yellow bar
+            thumbnail: { 
+                url: quoteData.imageUrl // Top-right thumbnail style
             }
         }]
     };
@@ -40,8 +40,6 @@ async function generateWithRetry(modelName, prompt) {
     for (let i = 0; i < 3; i++) {
         try {
             console.log(`Attempt ${i + 1} with ${modelName}...`);
-            
-            // 30-second timeout to prevent the Action from hanging silently
             const timeoutPromise = new Promise((_, reject) =>
                 setTimeout(() => reject(new Error('Gemini API timed out')), 30000)
             );
@@ -63,7 +61,6 @@ async function generateWithRetry(modelName, prompt) {
 async function main() {
     let historyData = [];
 
-    // 1. Load History 
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
         try {
             const content = fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8');
@@ -73,16 +70,18 @@ async function main() {
 
     const usedAuthors = historyData.slice(0, 50).map(h => h.author);
 
-    const prompt = `Provide an inspiring Quote of the Day. 
+    // Strict prompt to ensure direct file links are found
+    const prompt = `Provide an inspiring Quote of the Day from a famous person. 
     JSON ONLY: {
       "quote": "The quote text",
       "author": "Author Name",
-      "sourceUrl": "Wikipedia link for the author",
-      "imageUrl": "DIRECT .jpg or .png link of the author"
+      "sourceUrl": "Wikipedia URL",
+      "imageUrl": "DIRECT .jpg or .png link"
     }.
-    CRITICAL: imageUrl MUST be a direct link to a file ending in .jpg or .png. 
-    If a photo of the author is unavailable, use a high-quality landscape photo.
-    DO NOT use these authors: ${usedAuthors.join(", ")}`;
+    CRITICAL: imageUrl MUST be a direct raw image file link (e.g., from upload.wikimedia.org). 
+    DO NOT use the link to the Wikipedia article or the file description page.
+    If a direct photo isn't available, find a high-res landscape image link.
+    DO NOT use: ${usedAuthors.join(", ")}`;
 
     try {
         console.log("Connecting to Gemini...");
@@ -94,28 +93,19 @@ async function main() {
         }
 
         if (responseText) {
-            console.log("Received data from Gemini. Parsing...");
             const quoteData = JSON.parse(responseText);
 
-            // 2. Simple Anti-Spam (Checks if exact quote was last)
             if (historyData.length > 0 && historyData[0].quote === quoteData.quote) {
-                console.log("Duplicate quote detected. Skipping post.");
+                console.log("Duplicate detected.");
                 return;
             }
 
-            // 3. Save for Mix It Up
             fs.writeFileSync(CONFIG.SAVE_FILE, `"${quoteData.quote}" — ${quoteData.author}`);
-
-            // 4. Update History 
             historyData.unshift(quoteData);
             fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
 
-            // 5. Post to Discord
-            console.log("Posting to Discord...");
             await postToDiscord(quoteData);
-            console.log("Success! Check Discord.");
-        } else {
-            console.log("Failed to get a valid response from Gemini after all attempts.");
+            console.log("Success! Posted exactly like the MLK version.");
         }
     } catch (err) {
         console.error("Critical Error:", err.message);
