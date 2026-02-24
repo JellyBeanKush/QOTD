@@ -39,9 +39,21 @@ async function generateWithRetry(modelName, prompt) {
 
     for (let i = 0; i < 3; i++) {
         try {
-            const result = await model.generateContent(prompt);
+            console.log(`Attempt ${i + 1} with ${modelName}...`);
+            
+            // 30-second timeout to prevent the Action from hanging silently
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Gemini API timed out')), 30000)
+            );
+
+            const result = await Promise.race([
+                model.generateContent(prompt),
+                timeoutPromise
+            ]);
+
             return result.response.text().replace(/```json|```/g, "").trim();
         } catch (error) {
+            console.log(`Attempt ${i + 1} failed: ${error.message}`);
             if (i < 2) await new Promise(r => setTimeout(r, 5000));
         }
     }
@@ -51,7 +63,7 @@ async function generateWithRetry(modelName, prompt) {
 async function main() {
     let historyData = [];
 
-    // 1. Load History (Corrected variable name)
+    // 1. Load History 
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
         try {
             const content = fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8');
@@ -75,27 +87,35 @@ async function main() {
     try {
         console.log("Connecting to Gemini...");
         let responseText = await generateWithRetry(CONFIG.PRIMARY_MODEL, prompt);
-        if (!responseText) responseText = await generateWithRetry(CONFIG.BACKUP_MODEL, prompt);
+        
+        if (!responseText) {
+            console.log("Primary model failed, trying backup...");
+            responseText = await generateWithRetry(CONFIG.BACKUP_MODEL, prompt);
+        }
 
         if (responseText) {
+            console.log("Received data from Gemini. Parsing...");
             const quoteData = JSON.parse(responseText);
 
             // 2. Simple Anti-Spam (Checks if exact quote was last)
             if (historyData.length > 0 && historyData[0].quote === quoteData.quote) {
-                console.log("Duplicate detected. Try running again for a new one.");
+                console.log("Duplicate quote detected. Skipping post.");
                 return;
             }
 
-            // 3. Save for Mix It Up (Formatted for easy reading)
+            // 3. Save for Mix It Up
             fs.writeFileSync(CONFIG.SAVE_FILE, `"${quoteData.quote}" — ${quoteData.author}`);
 
-            // 4. Update History (Fixed the 'history' vs 'historyData' bug)
+            // 4. Update History 
             historyData.unshift(quoteData);
             fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
 
             // 5. Post to Discord
+            console.log("Posting to Discord...");
             await postToDiscord(quoteData);
             console.log("Success! Check Discord.");
+        } else {
+            console.log("Failed to get a valid response from Gemini after all attempts.");
         }
     } catch (err) {
         console.error("Critical Error:", err.message);
