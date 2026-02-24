@@ -7,7 +7,7 @@ const CONFIG = {
     DISCORD_URL: process.env.DISCORD_WEBHOOK_URL,
     SAVE_FILE: 'current_qotd.txt',
     HISTORY_FILE: 'qotd_history.json',
-    PRIMARY_MODEL: "gemini-2.0-flash", 
+    PRIMARY_MODEL: "gemini-2.5-flash", 
     BACKUP_MODEL: "gemini-1.5-flash"
 };
 
