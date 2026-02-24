@@ -14,11 +14,21 @@ const CONFIG = {
 const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles' };
 const displayDate = new Date().toLocaleDateString('en-US', options);
 
+// This function fixes the "Wikipedia File Page" issue you saw in your screenshot
+function getRawImageUrl(url) {
+    if (!url) return "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000";
+    
+    // If the AI gives a Wikipedia "File:" page, we try to point it to a high-res fallback 
+    // because Discord cannot render HTML pages as images.
+    if (url.includes("wikipedia.org/wiki/File:") || !url.match(/\.(jpg|jpeg|png|webp)$/i)) {
+        console.log("AI provided a webpage link. Using a high-quality placeholder to keep the MLK look.");
+        return "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000";
+    }
+    return url;
+}
+
 async function postToDiscord(quoteData) {
-    // Check if the URL is a direct image. If not, we use a high-res placeholder so it never looks empty.
-    const validImage = (quoteData.imageUrl && quoteData.imageUrl.match(/\.(jpg|jpeg|png|webp|gif)$/i)) 
-        ? quoteData.imageUrl 
-        : "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000&auto=format&fit=crop";
+    const finalImage = getRawImageUrl(quoteData.imageUrl);
 
     const discordPayload = {
         embeds: [{
@@ -26,12 +36,10 @@ async function postToDiscord(quoteData) {
             description: `"${quoteData.quote}"\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
             color: 0xf1c40f, 
             thumbnail: { 
-                url: validImage // This puts it in the top-right like MLK
+                url: finalImage // This puts it in the top-right corner like the MLK post
             }
         }]
     };
-
-    console.log(`Sending Image URL to Discord: ${validImage}`);
 
     await fetch(CONFIG.DISCORD_URL, {
         method: 'POST',
@@ -48,7 +56,7 @@ async function generateWithRetry(modelName, prompt) {
         try {
             console.log(`Attempt ${i + 1} with ${modelName}...`);
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Gemini API timed out')), 30000)
+                setTimeout(() => reject(new Error('Gemini timed out')), 30000)
             );
 
             const result = await Promise.race([
@@ -58,7 +66,7 @@ async function generateWithRetry(modelName, prompt) {
 
             return result.response.text().replace(/```json|```/g, "").trim();
         } catch (error) {
-            console.log(`Attempt ${i + 1} failed: ${error.message}`);
+            console.log(`Error: ${error.message}`);
             if (i < 2) await new Promise(r => setTimeout(r, 5000));
         }
     }
@@ -70,8 +78,7 @@ async function main() {
 
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
         try {
-            const content = fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8');
-            historyData = JSON.parse(content);
+            historyData = JSON.parse(fs.readFileSync(CONFIG.HISTORY_FILE, 'utf8'));
         } catch (e) { historyData = []; }
     }
 
@@ -82,12 +89,13 @@ async function main() {
       "quote": "The quote text",
       "author": "Author Name",
       "sourceUrl": "Wikipedia URL",
-      "imageUrl": "DIRECT .jpg link"
+      "imageUrl": "DIRECT RAW IMAGE LINK"
     }.
-    CRITICAL INSTRUCTION FOR IMAGE: 
-    You MUST provide a DIRECT link to a .jpg or .png file from Wikimedia Commons (usually starts with upload.wikimedia.org).
-    If a direct photo of the author is not available, provide a high-quality aesthetic landscape photo URL from Unsplash.
-    NEVER provide a link to a .html page or a Wikipedia 'File:' page.
+    CRITICAL IMAGE RULES:
+    1. The imageUrl MUST be a direct link to a raw file (ending in .jpg or .png).
+    2. NEVER provide a link to a Wikipedia 'File:' page or any .html page.
+    3. Look for links starting with 'https://upload.wikimedia.org/'.
+    4. If no raw .jpg link exists, use this fallback: https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000
     DO NOT use these authors: ${usedAuthors.join(", ")}`;
 
     try {
@@ -95,7 +103,7 @@ async function main() {
         let responseText = await generateWithRetry(CONFIG.PRIMARY_MODEL, prompt);
         
         if (!responseText) {
-            console.log("Primary model failed, trying backup...");
+            console.log("Trying backup model...");
             responseText = await generateWithRetry(CONFIG.BACKUP_MODEL, prompt);
         }
 
@@ -103,7 +111,7 @@ async function main() {
             const quoteData = JSON.parse(responseText);
 
             if (historyData.length > 0 && historyData[0].quote === quoteData.quote) {
-                console.log("Duplicate detected. Skipping.");
+                console.log("Duplicate quote.");
                 return;
             }
 
@@ -112,7 +120,7 @@ async function main() {
             fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
 
             await postToDiscord(quoteData);
-            console.log("QOTD Posted successfully.");
+            console.log("Successfully posted to Discord with image logic fixed.");
         }
     } catch (err) {
         console.error("Critical Error:", err.message);
