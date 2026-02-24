@@ -1,38 +1,27 @@
-name: Daily Quote Bot
-
+name: QOTD Bot Runner
 on:
   schedule:
-    # 14:07 UTC is 6:07 AM Pacific Standard Time
-    - cron: '7 14 * * *'
-  workflow_dispatch: # Allows you to test it manually
-
+    - cron: '07 11 * * *'
+  workflow_dispatch:
 jobs:
-  build:
+  run-bot:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Essential for saving current_quote.txt and history back to your repo
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          
-      - name: Install Dependencies
-        run: npm install
-        
-      - name: Run Script
+          node-version: 20
+      - run: npm install
+      - run: node index.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: node index.mjs
-
-      - name: Commit and Push
+      - name: Commit changes
         run: |
-          git config --global user.name "QuoteBot"
-          git config --global user.email "actions@github.com"
-          git add current_quote.txt quote_history.json
-          git commit -m "Update daily quote and history [skip ci]" || echo "No changes to commit"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add current_qotd.txt qotd_history.json
+          git commit -m "Update QOTD History [skip ci]" || echo "No changes to commit"
           git push
