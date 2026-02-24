@@ -15,16 +15,23 @@ const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Ame
 const displayDate = new Date().toLocaleDateString('en-US', options);
 
 async function postToDiscord(quoteData) {
+    // Check if the URL is a direct image. If not, we use a high-res placeholder so it never looks empty.
+    const validImage = (quoteData.imageUrl && quoteData.imageUrl.match(/\.(jpg|jpeg|png|webp|gif)$/i)) 
+        ? quoteData.imageUrl 
+        : "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1000&auto=format&fit=crop";
+
     const discordPayload = {
         embeds: [{
-            title: `Quote of the Day - ${displayDate}`, // Standard hyphen
-            description: `"${quoteData.quote}"\n\n— ${quoteData.author}\n\n[Learn more about the author](${quoteData.sourceUrl})`,
-            color: 0xf1c40f, // Yellow bar
+            title: `Quote of the Day - ${displayDate}`,
+            description: `"${quoteData.quote}"\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
+            color: 0xf1c40f, 
             thumbnail: { 
-                url: quoteData.imageUrl // Top-right thumbnail style
+                url: validImage // This puts it in the top-right like MLK
             }
         }]
     };
+
+    console.log(`Sending Image URL to Discord: ${validImage}`);
 
     await fetch(CONFIG.DISCORD_URL, {
         method: 'POST',
@@ -70,18 +77,18 @@ async function main() {
 
     const usedAuthors = historyData.slice(0, 50).map(h => h.author);
 
-    // Strict prompt to ensure direct file links are found
-    const prompt = `Provide an inspiring Quote of the Day from a famous person. 
+    const prompt = `Provide an inspiring Quote of the Day from a historical figure.
     JSON ONLY: {
       "quote": "The quote text",
       "author": "Author Name",
       "sourceUrl": "Wikipedia URL",
-      "imageUrl": "DIRECT .jpg or .png link"
+      "imageUrl": "DIRECT .jpg link"
     }.
-    CRITICAL: imageUrl MUST be a direct raw image file link (e.g., from upload.wikimedia.org). 
-    DO NOT use the link to the Wikipedia article or the file description page.
-    If a direct photo isn't available, find a high-res landscape image link.
-    DO NOT use: ${usedAuthors.join(", ")}`;
+    CRITICAL INSTRUCTION FOR IMAGE: 
+    You MUST provide a DIRECT link to a .jpg or .png file from Wikimedia Commons (usually starts with upload.wikimedia.org).
+    If a direct photo of the author is not available, provide a high-quality aesthetic landscape photo URL from Unsplash.
+    NEVER provide a link to a .html page or a Wikipedia 'File:' page.
+    DO NOT use these authors: ${usedAuthors.join(", ")}`;
 
     try {
         console.log("Connecting to Gemini...");
@@ -96,7 +103,7 @@ async function main() {
             const quoteData = JSON.parse(responseText);
 
             if (historyData.length > 0 && historyData[0].quote === quoteData.quote) {
-                console.log("Duplicate detected.");
+                console.log("Duplicate detected. Skipping.");
                 return;
             }
 
@@ -105,7 +112,7 @@ async function main() {
             fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
 
             await postToDiscord(quoteData);
-            console.log("Success! Posted exactly like the MLK version.");
+            console.log("QOTD Posted successfully.");
         }
     } catch (err) {
         console.error("Critical Error:", err.message);
