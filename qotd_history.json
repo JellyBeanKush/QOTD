@@ -1,5 +1,10 @@
 [
   {
+    "quote": "Whatever you are, be a good one.",
+    "author": "Abraham Lincoln",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln"
+  },
+  {
     "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
     "author": "Winston Churchill",
     "sourceUrl": "https://en.wikipedia.org/wiki/Winston_Churchill"
