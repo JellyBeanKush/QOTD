@@ -2,15 +2,16 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import fetch from 'node-fetch';
 import fs from 'fs';
 
+// Configuration
 const CONFIG = {
     GEMINI_KEY: process.env.GEMINI_API_KEY,
     DISCORD_URL: process.env.DISCORD_WEBHOOK_URL,
     SAVE_FILE: 'current_qotd.txt',
     HISTORY_FILE: 'qotd_history.json',
+    // Ordered by preference: 3.1 Lite is fastest/newest
     MODELS: [
-        "gemini-flash-latest", 
-        "gemini-pro-latest", 
-        "gemini-2.5-flash", 
+        "gemini-3.1-flash-lite-preview", 
+        "gemini-3-flash-preview", 
         "gemini-1.5-flash"
     ]
 };
@@ -20,7 +21,6 @@ const displayDate = new Date().toLocaleDateString('en-US', options);
 
 /**
  * Robust Wikipedia Image Fetcher
- * This parses the Wiki URL to get the actual "lead" image for the person.
  */
 async function getWikipediaThumbnail(wikiUrl) {
     try {
@@ -34,11 +34,7 @@ async function getWikipediaThumbnail(wikiUrl) {
         const pages = data.query.pages;
         const pageId = Object.keys(pages)[0];
         
-        if (pageId === "-1") {
-            console.log(`No Wikipedia page found for title: ${title}`);
-            return null;
-        }
-        
+        if (pageId === "-1") return null;
         return pages[pageId].thumbnail ? pages[pageId].thumbnail.source : null;
     } catch (err) {
         console.error("Wikipedia Image API Error:", err.message);
@@ -46,6 +42,9 @@ async function getWikipediaThumbnail(wikiUrl) {
     }
 }
 
+/**
+ * Posts the formatted embed to Discord
+ */
 async function postToDiscord(quoteData) {
     console.log(`Fetching portrait for: ${quoteData.author}`);
     const wikiThumbnail = await getWikipediaThumbnail(quoteData.sourceUrl);
@@ -54,8 +53,9 @@ async function postToDiscord(quoteData) {
         embeds: [{
             title: `Quote of the Day - ${displayDate}`,
             description: `\n# "${quoteData.quote}"\n\n— *${quoteData.author}*\n\n[Learn more about the author](${quoteData.sourceUrl})`,
-            color: 0xf1c40f, 
-            thumbnail: wikiThumbnail ? { url: wikiThumbnail } : null
+            color: 0xf1c40f, // Gold color
+            thumbnail: wikiThumbnail ? { url: wikiThumbnail } : null,
+            footer: { text: "Generated via Gemini 3.1 Flash-Lite" }
         }]
     };
 
@@ -81,11 +81,11 @@ async function main() {
         }
     }
 
-    // Only show last 40 authors to Gemini to keep prompt small
-    const usedAuthors = historyData.slice(0, 40).map(h => h.author);
+    const usedAuthors = historyData.slice(0, 50).map(h => h.author);
 
     const prompt = `Provide an inspiring Quote of the Day from a historical figure.
-    JSON ONLY: {
+    Return ONLY a raw JSON object with this structure:
+    {
       "quote": "The quote text",
       "author": "Author Name",
       "sourceUrl": "Full Wikipedia URL"
@@ -97,21 +97,34 @@ async function main() {
     for (const modelName of CONFIG.MODELS) {
         try {
             console.log(`Attempting Quote generation with ${modelName}...`);
-            const model = genAI.getGenerativeModel({ 
-                model: modelName,
-                generationConfig: { response_mime_type: "application/json" }
+            
+            // Explicitly use v1beta to support thinkingConfig and latest model names
+            const model = genAI.getGenerativeModel(
+                { model: modelName },
+                { apiVersion: 'v1beta' }
+            );
+
+            const result = await model.generateContent({
+                contents: [{ role: 'user', parts: [{ text: prompt }] }],
+                generationConfig: { 
+                    response_mime_type: "application/json",
+                    // Use minimal thinking for speed on low-complexity tasks
+                    thinkingConfig: {
+                        includeThoughts: false,
+                        thinkingLevel: "MINIMAL" 
+                    }
+                }
             });
 
-            const result = await model.generateContent(prompt);
             const responseText = result.response.text();
             
-            // Safety Match for JSON
+            // Extract JSON from potential Markdown blocks
             const jsonMatch = responseText.match(/\{[\s\S]*\}/);
             const quoteData = JSON.parse(jsonMatch ? jsonMatch[0] : responseText);
 
-            if (!quoteData.quote || !quoteData.author) throw new Error("Incomplete JSON received");
+            if (!quoteData.quote || !quoteData.author) throw new Error("Incomplete JSON");
 
-            // Save Infinite History
+            // Save history
             fs.writeFileSync(CONFIG.SAVE_FILE, `"${quoteData.quote}" — ${quoteData.author}`);
             historyData.unshift(quoteData);
             fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData, null, 2));
@@ -122,9 +135,9 @@ async function main() {
 
         } catch (err) {
             console.warn(`⚠️ ${modelName} failed: ${err.message}`);
+            // Wait before trying the next model if rate limited
             if (err.message.includes("429")) {
-                console.log("Waiting 10s for rate limit...");
-                await new Promise(r => setTimeout(r, 10000));
+                await new Promise(r => setTimeout(r, 2000));
             }
         }
     }
