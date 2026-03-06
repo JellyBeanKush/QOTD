@@ -1,27 +1,42 @@
-name: QOTD Bot Runner
+name: QOTD Bot
+
 on:
   schedule:
-    - cron: '07 11 * * *'
+    # Runs at 14:00 UTC (7:00 AM PT) every day
+    - cron: '0 14 * * *'
   workflow_dispatch:
+    # Allows you to run it manually from the "Actions" tab
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - run: npm install
-      - run: node index.mjs
+          node-version: '20' # Using a stable 2026-supported version
+
+      - name: Install Dependencies
+        run: |
+          npm install @google/genai node-fetch
+          # This ensures the new 2026 SDK is available to the runner
+
+      - name: Run QOTD Script
+        run: node index.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      - name: Commit changes
+
+      - name: Commit History Changes
+        # This part saves the 'qotd_history.json' back to your repo 
+        # so you don't get the same quote twice tomorrow!
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add current_qotd.txt qotd_history.json
-          git commit -m "Update QOTD History [skip ci]" || echo "No changes to commit"
+          git config --global user.name "QOTD Bot"
+          git config --global user.email "bot@github.com"
+          git add qotd_history.json current_qotd.txt
+          git commit -m "Update QOTD history [skip ci]" || echo "No changes to commit"
           git push
