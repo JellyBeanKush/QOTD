@@ -18,24 +18,6 @@ const CONFIG = {
     MAX_RETRIES: 3
 };
 
-const dateOptions = { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric', 
-    timeZone: 'America/Los_Angeles' 
-};
-const displayDate = new Date().toLocaleDateString('en-US', dateOptions);
-
-/**
- * Creates a "Scroll to Text Fragment" URL.
- */
-function createDeepLink(url, text) {
-    const snippet = text.split(' ').slice(0, 6).join(' ');
-    const encodedSnippet = encodeURIComponent(snippet);
-    const separator = url.includes('#') ? '&' : '#';
-    return `${url}${separator}:~:text=${encodedSnippet}`;
-}
-
 async function verifyUrl(url) {
     try {
         const res = await fetch(url, { method: 'HEAD' });
@@ -60,17 +42,17 @@ async function postToDiscord(quoteData) {
     console.log(`[Discord] Posting: ${quoteData.author}`);
     const wikiThumbnail = await getWikipediaThumbnail(quoteData.sourceUrl);
 
-    const highlightedUrl = createDeepLink(quoteData.quoteUrl, quoteData.quote);
+    // Clean up context to remove extra parentheses
     const cleanContext = quoteData.context.replace(/[()]/g, '');
 
     const discordPayload = {
         embeds: [{
-            title: `✨ Quote of the Day — ${displayDate}`,
+            title: `✨ Quote of the Day`,
             description: [
-                `## "${quoteData.quote}"`,
-                `> — **${quoteData.author}**`,
+                `> ## "${quoteData.quote}"`,
+                `— **${quoteData.author}**`,
                 `\u200B`, 
-                `📜 [from: ${cleanContext}](<${highlightedUrl}>)`,
+                `📜 [Source: ${cleanContext}](<${quoteData.quoteUrl}>)`,
                 `👤 [Learn about the Author](<${quoteData.sourceUrl}>)`
             ].join('\n'),
             color: 0xf1c40f, // Gold
@@ -87,7 +69,7 @@ async function postToDiscord(quoteData) {
 }
 
 async function main() {
-    console.log("--- Starting Refined QOTD Generation ---");
+    console.log("--- Starting Minimalist QOTD Generation ---");
 
     let historyData = [];
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
@@ -104,7 +86,7 @@ async function main() {
       "quote": "The exact quote text",
       "author": "Full Name",
       "sourceUrl": "Author's Wikipedia Bio URL",
-      "quoteUrl": "A Wikiquote or transcript URL that CONTAINS this exact text",
+      "quoteUrl": "A Wikiquote URL or primary source URL",
       "context": "Short name of the source (e.g. 'The Meditations', 'Gettysburg Address')"
     }
     
