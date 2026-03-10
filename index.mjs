@@ -26,6 +26,16 @@ const dateOptions = {
 };
 const displayDate = new Date().toLocaleDateString('en-US', dateOptions);
 
+/**
+ * Creates a "Scroll to Text Fragment" URL.
+ */
+function createDeepLink(url, text) {
+    const snippet = text.split(' ').slice(0, 6).join(' ');
+    const encodedSnippet = encodeURIComponent(snippet);
+    const separator = url.includes('#') ? '&' : '#';
+    return `${url}${separator}:~:text=${encodedSnippet}`;
+}
+
 async function verifyUrl(url) {
     try {
         const res = await fetch(url, { method: 'HEAD' });
@@ -50,17 +60,20 @@ async function postToDiscord(quoteData) {
     console.log(`[Discord] Posting: ${quoteData.author}`);
     const wikiThumbnail = await getWikipediaThumbnail(quoteData.sourceUrl);
 
-    // FIX: Remove parentheses from context text to avoid breaking Discord Markdown
+    const highlightedUrl = createDeepLink(quoteData.quoteUrl, quoteData.quote);
     const cleanContext = quoteData.context.replace(/[()]/g, '');
-    
-    // FIX: Wrap URL in < > to ensure Discord treats it as a direct link, not a search
-    const contextLink = `[*${cleanContext}*](<${quoteData.quoteUrl}>)`;
 
     const discordPayload = {
         embeds: [{
-            title: `Quote of the Day — ${displayDate}`,
-            description: `### "${quoteData.quote}"\n\n— **${quoteData.author}**\n${contextLink}\n\n[About the Author](<${quoteData.sourceUrl}>)`,
-            color: 0xf1c40f,
+            title: `✨ Quote of the Day — ${displayDate}`,
+            description: [
+                `## "${quoteData.quote}"`,
+                `> — **${quoteData.author}**`,
+                `\u200B`, 
+                `📜 [from: ${cleanContext}](<${highlightedUrl}>)`,
+                `👤 [Learn about the Author](<${quoteData.sourceUrl}>)`
+            ].join('\n'),
+            color: 0xf1c40f, // Gold
             thumbnail: wikiThumbnail ? { url: wikiThumbnail } : null
         }]
     };
@@ -74,7 +87,7 @@ async function postToDiscord(quoteData) {
 }
 
 async function main() {
-    console.log("--- Starting Bulletproof QOTD Generation ---");
+    console.log("--- Starting Refined QOTD Generation ---");
 
     let historyData = [];
     if (fs.existsSync(CONFIG.HISTORY_FILE)) {
@@ -91,7 +104,7 @@ async function main() {
       "quote": "The exact quote text",
       "author": "Full Name",
       "sourceUrl": "Author's Wikipedia Bio URL",
-      "quoteUrl": "A specific URL verifying this exact quote (e.g., Wikiquote or a speech transcript)",
+      "quoteUrl": "A Wikiquote or transcript URL that CONTAINS this exact text",
       "context": "Short name of the source (e.g. 'The Meditations', 'Gettysburg Address')"
     }
     
@@ -113,16 +126,13 @@ async function main() {
 
                 const quoteData = JSON.parse(result.text);
 
-                const authorOk = await verifyUrl(quoteData.sourceUrl);
-                const quoteOk = await verifyUrl(quoteData.quoteUrl);
-
-                if (!authorOk || !quoteOk) {
-                    console.warn(`[Reject] Broken links. Retrying...`);
+                if (!(await verifyUrl(quoteData.sourceUrl)) || !(await verifyUrl(quoteData.quoteUrl))) {
+                    console.warn(`[Reject] Broken links.`);
                     continue;
                 }
 
                 if (usedQuotes.includes(quoteData.quote.toLowerCase().trim())) {
-                    console.warn(`[Reject] Duplicate quote. Retrying...`);
+                    console.warn(`[Reject] Duplicate quote.`);
                     continue;
                 }
 
