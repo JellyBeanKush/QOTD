@@ -1,5 +1,12 @@
 [
   {
+    "quote": "Well done is better than well said.",
+    "author": "Benjamin Franklin",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Benjamin_Franklin",
+    "context": "Poor Richard's Almanack"
+  },
+  {
     "quote": "If I have seen further it is by standing on the shoulders of Giants.",
     "author": "Isaac Newton",
     "sourceUrl": "https://en.wikipedia.org/wiki/Isaac_Newton",
