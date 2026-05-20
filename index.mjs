@@ -118,7 +118,7 @@ async function main() {
                     continue;
                 }
 
-                fs.writeFileSync(CONFIG.SAVE_FILE, `"${quoteData.quote}" — ${quoteData.author}`);
+                fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData, null, 2), 'utf8');
                 historyData.unshift(quoteData);
                 fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
 
