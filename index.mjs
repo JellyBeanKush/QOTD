@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+    import { GoogleGenAI } from "@google/genai";
 import fetch from 'node-fetch';
 import fs from 'fs';
 
@@ -38,9 +38,8 @@ async function getWikipediaThumbnail(wikiUrl) {
     } catch { return null; }
 }
 
-async function postToDiscord(quoteData) {
+async function postToDiscord(quoteData, wikiThumbnail) {
     console.log(`[Discord] Posting: ${quoteData.author}`);
-    const wikiThumbnail = await getWikipediaThumbnail(quoteData.sourceUrl);
 
     // Clean up context to remove extra parentheses
     const cleanContext = quoteData.context.replace(/[()]/g, '');
@@ -55,7 +54,8 @@ async function postToDiscord(quoteData) {
                 `📜 [Source: ${cleanContext}](<${quoteData.quoteUrl}>)`,
                 `👤 [Learn about the Author](<${quoteData.sourceUrl}>)`
             ].join('\n'),
-            color: 0xf1c40f, // Gold
+            color: 0xf1c40f,
+            // Use the passed-in thumbnail
             thumbnail: wikiThumbnail ? { url: wikiThumbnail } : null
         }]
     };
@@ -113,16 +113,24 @@ async function main() {
                     continue;
                 }
 
-                if (usedQuotes.includes(quoteData.quote.toLowerCase().trim())) {
-                    console.warn(`[Reject] Duplicate quote.`);
-                    continue;
-                }
+               if (usedQuotes.includes(quoteData.quote.toLowerCase().trim())) {
+                console.warn(`[Reject] Duplicate quote.`);
+                continue;
+            }
 
-                fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData, null, 2), 'utf8');
-                historyData.unshift(quoteData);
-                fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
+            // 1. Fetch the thumbnail first so we have the link ready
+            const wikiThumbnail = await getWikipediaThumbnail(quoteData.sourceUrl);
 
-                await postToDiscord(quoteData);
+            // 2. Attach the link directly to your object so it saves to the files
+            quoteData.imageUrl = wikiThumbnail;
+
+            // 3. Save the files (they now include the imageUrl!)
+            fs.writeFileSync(CONFIG.SAVE_FILE, JSON.stringify(quoteData, null, 2), 'utf8');
+            historyData.unshift(quoteData);
+            fs.writeFileSync(CONFIG.HISTORY_FILE, JSON.stringify(historyData.slice(0, 100), null, 2));
+
+            // 4. Send everything (including the thumbnail) over to Discord
+            await postToDiscord(quoteData, wikiThumbnail);
                 console.log("--- QOTD Complete ---");
                 return;
 
