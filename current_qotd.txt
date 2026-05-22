@@ -1,8 +1,8 @@
 {
-  "quote": "It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood.",
-  "author": "Theodore Roosevelt",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Theodore_Roosevelt#Citizenship_in_a_Republic_.281910.29",
-  "context": "Citizenship in a Republic",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg/500px-Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg"
+  "quote": "Imagination is the only weapon in the war against reality.",
+  "author": "Jules Verne",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jules_Verne",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Jules_Verne",
+  "context": "The Mysterious Island",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Jules_Verne_by_%C3%89tienne_Carjat.jpg/500px-Jules_Verne_by_%C3%89tienne_Carjat.jpg"
 }
