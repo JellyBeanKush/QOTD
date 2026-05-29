@@ -1,8 +1,8 @@
 {
-  "quote": "The only way to make sense out of change is to plunge into it, move with it, and join the dance.",
-  "author": "Alan Watts",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Alan_Watts",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Alan_Watts",
-  "context": "The Wisdom of Insecurity",
-  "imageUrl": null
+  "quote": "The tragedy of life is what dies inside a man while he lives.",
+  "author": "Albert Schweitzer",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Schweitzer",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Schweitzer",
+  "context": "The Philosophy of Civilization",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Bundesarchiv_Bild_183-D0116-0041-019%2C_Albert_Schweitzer.jpg/500px-Bundesarchiv_Bild_183-D0116-0041-019%2C_Albert_Schweitzer.jpg"
 }
