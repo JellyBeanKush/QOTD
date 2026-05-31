@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The mind is its own place, and in itself can make a heaven of hell, a hell of heaven.",
+    "author": "John Milton",
+    "sourceUrl": "https://en.wikipedia.org/wiki/John_Milton",
+    "quoteUrl": "https://en.wikiquote.org/wiki/John_Milton",
+    "context": "Paradise Lost",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/John_Milton_Christ%27s_College.jpg/500px-John_Milton_Christ%27s_College.jpg"
+  },
+  {
     "quote": "In the end, we will remember not the words of our enemies, but the silence of our friends.",
     "author": "Martin Luther King Jr.",
     "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
@@ -668,11 +676,5 @@
     "author": "Nelson Mandela",
     "sourceUrl": "https://en.wikipedia.org/wiki/Nelson_Mandela",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Nelson_Mandela_2008_%28cropped%29.jpg"
-  },
-  {
-    "quote": "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.",
-    "author": "Albert Einstein",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Albert_Einstein_Head.jpg"
   }
 ]
