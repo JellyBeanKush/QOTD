@@ -1,8 +1,8 @@
 {
-  "quote": "The mind is its own place, and in itself can make a heaven of hell, a hell of heaven.",
-  "author": "John Milton",
-  "sourceUrl": "https://en.wikipedia.org/wiki/John_Milton",
-  "quoteUrl": "https://en.wikiquote.org/wiki/John_Milton",
-  "context": "Paradise Lost",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/John_Milton_Christ%27s_College.jpg/500px-John_Milton_Christ%27s_College.jpg"
+  "quote": "Do what you can, with what you have, where you are.",
+  "author": "Theodore Roosevelt",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Theodore_Roosevelt",
+  "context": "Attributed to his speech in 1912",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg/500px-Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg"
 }
