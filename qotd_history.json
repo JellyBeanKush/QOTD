@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The way to love anything is to realize that it may be lost.",
+    "author": "G. K. Chesterton",
+    "sourceUrl": "https://en.wikipedia.org/wiki/G._K._Chesterton",
+    "quoteUrl": "https://en.wikiquote.org/wiki/G._K._Chesterton",
+    "context": "The Complete Thinker",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Gilbert_Chesterton.jpg/500px-Gilbert_Chesterton.jpg"
+  },
+  {
     "quote": "Do what you can, with what you have, where you are.",
     "author": "Theodore Roosevelt",
     "sourceUrl": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
@@ -672,11 +680,5 @@
     "author": "Martin Luther King Jr.",
     "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Martin_Luther_King_Jr_NYWTS.jpg"
-  },
-  {
-    "quote": "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
-    "author": "Marie Curie",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Marie_Curie",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Marie_Curie_c._1920s.jpg"
   }
 ]
