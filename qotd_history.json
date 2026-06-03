@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The limits of my language mean the limits of my world.",
+    "author": "Ludwig Wittgenstein",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ludwig_Wittgenstein",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
+    "context": "Tractatus Logico-Philosophicus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Ludwig_Wittgenstein_1929.jpg/500px-Ludwig_Wittgenstein_1929.jpg"
+  },
+  {
     "quote": "The way to love anything is to realize that it may be lost.",
     "author": "G. K. Chesterton",
     "sourceUrl": "https://en.wikipedia.org/wiki/G._K._Chesterton",
@@ -674,11 +682,5 @@
     "author": "Theodore Roosevelt",
     "sourceUrl": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Theodore_Roosevelt_portrait_by_Hermann_Struck.jpg"
-  },
-  {
-    "quote": "The time is always right to do what is right.",
-    "author": "Martin Luther King Jr.",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Martin_Luther_King_Jr_NYWTS.jpg"
   }
 ]
