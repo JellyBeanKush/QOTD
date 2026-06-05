@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Education is the most powerful weapon which you can use to change the world.",
+    "author": "Nelson Mandela",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Nelson_Mandela",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Nelson_Mandela",
+    "context": "Address at the University of the Witwatersrand (2003)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/500px-Nelson_Mandela_1994.jpg"
+  },
+  {
     "quote": "The way to get things done is to stop talking and begin doing.",
     "author": "Walt Disney",
     "sourceUrl": "https://en.wikipedia.org/wiki/Walt_Disney",
@@ -679,10 +687,5 @@
     "quote": "No one can make you feel inferior without your consent.",
     "author": "Eleanor Roosevelt",
     "sourceUrl": "https://en.wikipedia.org/wiki/Eleanor_Roosevelt"
-  },
-  {
-    "quote": "The only thing worse than being blind is having sight but no vision.",
-    "author": "Helen Keller",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Helen_Keller"
   }
 ]
