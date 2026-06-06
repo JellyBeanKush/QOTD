@@ -1,8 +1,8 @@
 {
-  "quote": "Education is the most powerful weapon which you can use to change the world.",
-  "author": "Nelson Mandela",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Nelson_Mandela",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Nelson_Mandela",
-  "context": "Address at the University of the Witwatersrand (2003)",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/500px-Nelson_Mandela_1994.jpg"
+  "quote": "If you don't know where you are going, any road will get you there.",
+  "author": "Lewis Carroll",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lewis_Carroll",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Lewis_Carroll",
+  "context": "Alice's Adventures in Wonderland",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/LewisCarrollSelfPhoto.jpg/500px-LewisCarrollSelfPhoto.jpg"
 }
