@@ -1,8 +1,8 @@
 {
-  "quote": "If you don't know where you are going, any road will get you there.",
-  "author": "Lewis Carroll",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Lewis_Carroll",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Lewis_Carroll",
-  "context": "Alice's Adventures in Wonderland",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/LewisCarrollSelfPhoto.jpg/500px-LewisCarrollSelfPhoto.jpg"
+  "quote": "I am not afraid of storms, for I am learning how to ship my sail.",
+  "author": "Louisa May Alcott",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Louisa_May_Alcott",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Louisa_May_Alcott",
+  "context": "Little Women",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Louisa_May_Alcott%2C_c._1870_-_Warren%27s_Portraits%2C_Boston.jpg/500px-Louisa_May_Alcott%2C_c._1870_-_Warren%27s_Portraits%2C_Boston.jpg"
 }
