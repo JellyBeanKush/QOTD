@@ -1,8 +1,8 @@
 {
-  "quote": "The way of a superior man is threefold: virtuous, he is free from anxieties; wise, he is free from perplexities; bold, he is free from fear.",
-  "author": "Confucius",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Confucius",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Confucius",
-  "context": "The Analects",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Confucius_Tang_Dynasty.jpg"
+  "quote": "The person who does not value his own life, which is very short, and who does not spend his time as if it were a fortune that cannot be replaced, is not fit to live.",
+  "author": "Jean-Jacques Rousseau",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jean-Jacques_Rousseau",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Jean-Jacques_Rousseau",
+  "context": "Emile, or On Education",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Maurice_Quentin_de_La_Tour_-_Portrait_of_Jean-Jacques_Rousseau_-_adjusted.jpg/500px-Maurice_Quentin_de_La_Tour_-_Portrait_of_Jean-Jacques_Rousseau_-_adjusted.jpg"
 }
