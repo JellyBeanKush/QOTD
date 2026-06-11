@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The unexamined life is not worth living.",
+    "author": "Socrates",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Socrates",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Socrates",
+    "context": "Apology",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/500px-Socrates_Louvre.jpg"
+  },
+  {
     "quote": "The only way to keep your health is to eat what you don't want, drink what you don't like, and do what you'd rather not.",
     "author": "Mark Twain",
     "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Twain",
@@ -697,10 +705,5 @@
     "quote": "Be the change that you wish to see in the world.",
     "author": "Mahatma Gandhi",
     "sourceUrl": "https://en.wikipedia.org/wiki/Mahatma_Gandhi"
-  },
-  {
-    "quote": "It does not matter how slowly you go as long as you do not stop.",
-    "author": "Confucius",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Confucius"
   }
 ]
