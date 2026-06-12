@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Courage is resistance to fear, mastery of fear, not absence of fear.",
+    "author": "Mark Twain",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Twain",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "context": "Following the Equator",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mark_Twain_by_AF_Bradley.jpg/500px-Mark_Twain_by_AF_Bradley.jpg"
+  },
+  {
     "quote": "The unexamined life is not worth living.",
     "author": "Socrates",
     "sourceUrl": "https://en.wikipedia.org/wiki/Socrates",
@@ -700,10 +708,5 @@
     "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.",
     "author": "Ralph Waldo Emerson",
     "sourceUrl": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson"
-  },
-  {
-    "quote": "Be the change that you wish to see in the world.",
-    "author": "Mahatma Gandhi",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Mahatma_Gandhi"
   }
 ]
