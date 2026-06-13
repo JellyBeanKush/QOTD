@@ -1,8 +1,8 @@
 {
-  "quote": "Courage is resistance to fear, mastery of fear, not absence of fear.",
+  "quote": "The best way to cheer yourself up is to try to cheer somebody else up.",
   "author": "Mark Twain",
   "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Twain",
   "quoteUrl": "https://en.wikiquote.org/wiki/Mark_Twain",
-  "context": "Following the Equator",
+  "context": "Mark Twain's Autobiography",
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mark_Twain_by_AF_Bradley.jpg/500px-Mark_Twain_by_AF_Bradley.jpg"
 }
