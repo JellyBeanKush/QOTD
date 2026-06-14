@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Nothing is so painful to the human mind as a great and sudden change.",
+    "author": "Mary Shelley",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mary_Shelley",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Mary_Shelley",
+    "context": "The Last Man",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mary_Wollstonecraft_Shelley_Rothwell.tif/lossy-page1-500px-Mary_Wollstonecraft_Shelley_Rothwell.tif.jpg"
+  },
+  {
     "quote": "The best way to cheer yourself up is to try to cheer somebody else up.",
     "author": "Mark Twain",
     "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Twain",
@@ -706,10 +714,5 @@
     "quote": "If you would not be forgotten as soon as you are dead and rotten, either write things worth reading or do things worth writing.",
     "author": "Benjamin Franklin",
     "sourceUrl": "https://en.wikipedia.org/wiki/Benjamin_Franklin"
-  },
-  {
-    "quote": "If there is no struggle, there is no progress.",
-    "author": "Frederick Douglass",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Frederick_Douglass"
   }
 ]
