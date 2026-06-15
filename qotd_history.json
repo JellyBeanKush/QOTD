@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The way to get ahead is to start now. If you wait for the perfect moment, you will wait forever.",
+    "author": "Maya Angelou",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Maya_Angelou",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Maya_Angelou",
+    "context": "Various interviews and public speaking engagements",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg/500px-Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg"
+  },
+  {
     "quote": "Nothing is so painful to the human mind as a great and sudden change.",
     "author": "Mary Shelley",
     "sourceUrl": "https://en.wikipedia.org/wiki/Mary_Shelley",
@@ -709,10 +717,5 @@
     "quote": "It is not the mountain we conquer, but ourselves.",
     "author": "Sir Edmund Hillary",
     "sourceUrl": "https://en.wikipedia.org/wiki/Edmund_Hillary"
-  },
-  {
-    "quote": "If you would not be forgotten as soon as you are dead and rotten, either write things worth reading or do things worth writing.",
-    "author": "Benjamin Franklin",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Benjamin_Franklin"
   }
 ]
