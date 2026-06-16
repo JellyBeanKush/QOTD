@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The heart has its reasons which reason knows nothing of.",
+    "author": "Blaise Pascal",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Blaise_Pascal",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Blaise_Pascal",
+    "context": "Pensées",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Blaise_Pascal_Versailles.JPG/500px-Blaise_Pascal_Versailles.JPG"
+  },
+  {
     "quote": "The way to get ahead is to start now. If you wait for the perfect moment, you will wait forever.",
     "author": "Maya Angelou",
     "sourceUrl": "https://en.wikipedia.org/wiki/Maya_Angelou",
@@ -712,10 +720,5 @@
     "quote": "It is not in the stars to hold our destiny but in ourselves.",
     "author": "William Shakespeare",
     "sourceUrl": "https://en.wikipedia.org/wiki/William_Shakespeare"
-  },
-  {
-    "quote": "It is not the mountain we conquer, but ourselves.",
-    "author": "Sir Edmund Hillary",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Edmund_Hillary"
   }
 ]
