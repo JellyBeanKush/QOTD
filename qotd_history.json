@@ -1,5 +1,13 @@
 [
   {
+    "quote": "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
+    "author": "J. K. Rowling",
+    "sourceUrl": "https://en.wikipedia.org/wiki/J._K._Rowling",
+    "quoteUrl": "https://en.wikiquote.org/wiki/J._K._Rowling",
+    "context": "Harry Potter and the Goblet of Fire",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/500px-J._K._Rowling_2010.jpg"
+  },
+  {
     "quote": "The heart has its reasons which reason knows nothing of.",
     "author": "Blaise Pascal",
     "sourceUrl": "https://en.wikipedia.org/wiki/Blaise_Pascal",
@@ -715,10 +723,5 @@
     "quote": "It is during our darkest moments that we must focus to see the light.",
     "author": "Aristotle Onassis",
     "sourceUrl": "https://en.wikipedia.org/wiki/Aristotle_Onassis"
-  },
-  {
-    "quote": "It is not in the stars to hold our destiny but in ourselves.",
-    "author": "William Shakespeare",
-    "sourceUrl": "https://en.wikipedia.org/wiki/William_Shakespeare"
   }
 ]
