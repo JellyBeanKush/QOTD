@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Franklin_D._Roosevelt",
+    "context": "First Inaugural Address",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg/500px-FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg"
+  },
+  {
     "quote": "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
     "author": "J. K. Rowling",
     "sourceUrl": "https://en.wikipedia.org/wiki/J._K._Rowling",
@@ -718,10 +726,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Walt_Disney",
     "quoteUrl": "https://en.wikiquote.org/wiki/Walt_Disney",
     "context": "General attribution"
-  },
-  {
-    "quote": "It is during our darkest moments that we must focus to see the light.",
-    "author": "Aristotle Onassis",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Aristotle_Onassis"
   }
 ]
