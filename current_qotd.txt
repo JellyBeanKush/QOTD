@@ -1,8 +1,8 @@
 {
-  "quote": "The only thing we have to fear is fear itself.",
-  "author": "Franklin D. Roosevelt",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Franklin_D._Roosevelt",
-  "context": "First Inaugural Address",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg/500px-FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg"
+  "quote": "The only way to have a friend is to be one.",
+  "author": "Ralph Waldo Emerson",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Ralph_Waldo_Emerson",
+  "context": "Essays: First Series",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg/500px-Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg"
 }
