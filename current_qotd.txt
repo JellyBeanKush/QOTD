@@ -1,8 +1,8 @@
 {
-  "quote": "The way is not in the sky. The way is in the heart.",
-  "author": "Gautama Buddha",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Gautama_Buddha",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
-  "context": "Dhammapada",
-  "imageUrl": null
+  "quote": "Life can only be understood backwards; but it must be lived forwards.",
+  "author": "Søren Kierkegaard",
+  "sourceUrl": "https://en.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard",
+  "quoteUrl": "https://en.wikiquote.org/wiki/S%C3%B8ren_Kierkegaard",
+  "context": "Journals",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/S%C3%B8ren_Kierkegaard_%281813-1855%29_-_%28cropped%29.jpg/500px-S%C3%B8ren_Kierkegaard_%281813-1855%29_-_%28cropped%29.jpg"
 }
