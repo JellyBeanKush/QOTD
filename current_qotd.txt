@@ -1,8 +1,8 @@
 {
-  "quote": "In the depth of winter, I finally learned that within me there lay an invincible summer.",
-  "author": "Albert Camus",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
-  "context": "Return to Tipasa",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg"
+  "quote": "There is no charm equal to tenderness of heart.",
+  "author": "Jane Austen",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Jane_Austen",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Jane_Austen",
+  "context": "Emma",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/CassandraAusten-JaneAusten%28c.1810%29_hires.jpg/500px-CassandraAusten-JaneAusten%28c.1810%29_hires.jpg"
 }
