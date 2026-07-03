@@ -1,8 +1,8 @@
 {
-  "quote": "Your children are not your children. They are the sons and daughters of Life's longing for itself.",
-  "author": "Kahlil Gibran",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Kahlil_Gibran",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Kahlil_Gibran",
-  "context": "The Prophet",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Kahlil_Gibran_1913.jpg"
+  "quote": "Our life is frittered away by detail. Simplify, simplify.",
+  "author": "Henry David Thoreau",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Henry_David_Thoreau",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Walden",
+  "context": "Walden",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg/500px-Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg"
 }
