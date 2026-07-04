@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
+    "author": "Helen Keller",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Helen_Keller",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Helen_Keller",
+    "context": "Optimism: An Essay",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Helen_Keller_%28circa_1904%29.jpg/500px-Helen_Keller_%28circa_1904%29.jpg"
+  },
+  {
     "quote": "Our life is frittered away by detail. Simplify, simplify.",
     "author": "Henry David Thoreau",
     "sourceUrl": "https://en.wikipedia.org/wiki/Henry_David_Thoreau",
@@ -734,12 +742,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Oscar_Wilde",
     "quoteUrl": "https://en.wikiquote.org/wiki/Oscar_Wilde",
     "context": "Lady Windermere's Fan"
-  },
-  {
-    "quote": "If one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.",
-    "author": "Henry David Thoreau",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Henry_David_Thoreau",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Henry_David_Thoreau",
-    "context": "Walden"
   }
 ]
