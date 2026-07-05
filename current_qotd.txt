@@ -1,8 +1,8 @@
 {
-  "quote": "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
-  "author": "Helen Keller",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Helen_Keller",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Helen_Keller",
-  "context": "Optimism: An Essay",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Helen_Keller_%28circa_1904%29.jpg/500px-Helen_Keller_%28circa_1904%29.jpg"
+  "quote": "Whatever you are, be a good one.",
+  "author": "Abraham Lincoln",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Abraham_Lincoln",
+  "context": "Attributed correspondence",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg/500px-Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg"
 }
