@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Winston_Churchill",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "context": "Attributed speech",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/500px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg"
+  },
+  {
     "quote": "The only way to do great work is to love what you do.",
     "author": "Steve Jobs",
     "sourceUrl": "https://en.wikipedia.org/wiki/Steve_Jobs",
@@ -737,12 +745,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
     "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
     "context": "The Rebel"
-  },
-  {
-    "quote": "The way to develop self-confidence is to do the thing you fear and get a record of successful experiences behind you.",
-    "author": "William Jennings Bryan",
-    "sourceUrl": "https://en.wikipedia.org/wiki/William_Jennings_Bryan",
-    "quoteUrl": "https://en.wikiquote.org/wiki/William_Jennings_Bryan",
-    "context": "General lecture/advice"
   }
 ]
