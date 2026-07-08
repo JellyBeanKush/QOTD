@@ -1,5 +1,13 @@
 [
   {
+    "quote": "If you want to live a happy life, tie it to a goal, not to people or things.",
+    "author": "Albert Einstein",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "context": "Attributed correspondence",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Albert_Einstein_Head_cleaned.jpg/500px-Albert_Einstein_Head_cleaned.jpg"
+  },
+  {
     "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
     "author": "Winston Churchill",
     "sourceUrl": "https://en.wikipedia.org/wiki/Winston_Churchill",
@@ -738,12 +746,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/William_Jennings_Bryan",
     "quoteUrl": "https://en.wikiquote.org/wiki/William_Jennings_Bryan",
     "context": "Public speaking engagements"
-  },
-  {
-    "quote": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
-    "author": "Albert Camus",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
-    "context": "The Rebel"
   }
 ]
