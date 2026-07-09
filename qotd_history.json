@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Waste no more time arguing what a good man should be. Be one.",
+    "author": "Marcus Aurelius",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Marcus_Aurelius",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Marcus_Aurelius",
+    "context": "Meditations",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DM.jpg/500px-MSR-ra-61-b-1-DM.jpg"
+  },
+  {
     "quote": "If you want to live a happy life, tie it to a goal, not to people or things.",
     "author": "Albert Einstein",
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
@@ -739,12 +747,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Laozi",
     "quoteUrl": "https://en.wikiquote.org/wiki/Laozi",
     "context": "Tao Te Ching"
-  },
-  {
-    "quote": "The way to get ahead is to start now.",
-    "author": "William Jennings Bryan",
-    "sourceUrl": "https://en.wikipedia.org/wiki/William_Jennings_Bryan",
-    "quoteUrl": "https://en.wikiquote.org/wiki/William_Jennings_Bryan",
-    "context": "Public speaking engagements"
   }
 ]
