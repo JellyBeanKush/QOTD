@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The mind is not a vessel to be filled, but a fire to be kindled.",
+    "author": "Plutarch",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Plutarch",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Plutarch",
+    "context": "On Listening to Lectures",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Portrait_of_a_philosopher%2C_maybe_Plutarch%2C_2nd_century_BC%2C_AM_Delphi%2C_0135.jpg/500px-Portrait_of_a_philosopher%2C_maybe_Plutarch%2C_2nd_century_BC%2C_AM_Delphi%2C_0135.jpg"
+  },
+  {
     "quote": "If you wish to make an apple pie from scratch, you must first invent the universe.",
     "author": "Carl Sagan",
     "sourceUrl": "https://en.wikipedia.org/wiki/Carl_Sagan",
@@ -743,12 +751,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Socrates",
     "quoteUrl": "https://en.wikiquote.org/wiki/Socrates",
     "context": "Apology"
-  },
-  {
-    "quote": "The way is not in the sky. The way is in the heart.",
-    "author": "Gautama Buddha",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Gautama_Buddha",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
-    "context": "Dhammapada"
   }
 ]
