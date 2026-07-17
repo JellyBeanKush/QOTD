@@ -1,5 +1,13 @@
 [
   {
+    "quote": "If liberty means anything at all, it means the right to tell people what they do not want to hear.",
+    "author": "George Orwell",
+    "sourceUrl": "https://en.wikipedia.org/wiki/George_Orwell",
+    "quoteUrl": "https://en.wikiquote.org/wiki/George_Orwell",
+    "context": "Preface to Animal Farm",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/George_Orwell_press_photo.jpg/500px-George_Orwell_press_photo.jpg"
+  },
+  {
     "quote": "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
     "author": "Marie Curie",
     "sourceUrl": "https://en.wikipedia.org/wiki/Marie_Curie",
@@ -747,12 +755,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
     "quoteUrl": "https://en.wikiquote.org/wiki/Martin_Luther_King_Jr.#1960s",
     "context": "The Trumpet of Conscience"
-  },
-  {
-    "quote": "I do not wish them to have power over men; but over themselves.",
-    "author": "Mary Wollstonecraft",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Mary_Wollstonecraft",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Mary_Wollstonecraft#A_Vindication_of_the_Rights_of_Woman_(1792)",
-    "context": "A Vindication of the Rights of Woman"
   }
 ]
