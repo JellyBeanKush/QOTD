@@ -1,8 +1,8 @@
 {
-  "quote": "If liberty means anything at all, it means the right to tell people what they do not want to hear.",
-  "author": "George Orwell",
-  "sourceUrl": "https://en.wikipedia.org/wiki/George_Orwell",
-  "quoteUrl": "https://en.wikiquote.org/wiki/George_Orwell",
-  "context": "Preface to Animal Farm",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/George_Orwell_press_photo.jpg/500px-George_Orwell_press_photo.jpg"
+  "quote": "If you look at the world with a narrow perspective, you will see a narrow world. If you look at the world with a wide perspective, you will see a wide world.",
+  "author": "Dalai Lama XIV",
+  "sourceUrl": "https://en.wikipedia.org/wiki/14th_Dalai_Lama",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Dalai_Lama",
+  "context": "The Art of Happiness",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/The_Dalai_Lama_in_2012.jpg/500px-The_Dalai_Lama_in_2012.jpg"
 }
