@@ -1,5 +1,13 @@
 [
   {
+    "quote": "I have never let my schooling interfere with my education.",
+    "author": "Mark Twain",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Twain",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "context": "Attributed correspondence",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mark_Twain_by_AF_Bradley_%28cropped_2%29.jpg/500px-Mark_Twain_by_AF_Bradley_%28cropped_2%29.jpg"
+  },
+  {
     "quote": "If you look at the world with a narrow perspective, you will see a narrow world. If you look at the world with a wide perspective, you will see a wide world.",
     "author": "Dalai Lama XIV",
     "sourceUrl": "https://en.wikipedia.org/wiki/14th_Dalai_Lama",
@@ -749,12 +757,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson",
     "quoteUrl": "https://en.wikiquote.org/wiki/Ralph_Waldo_Emerson",
     "context": "Essays: First Series"
-  },
-  {
-    "quote": "The mind is its own place, and in itself can make a heaven of hell, a hell of heaven.",
-    "author": "John Milton",
-    "sourceUrl": "https://en.wikipedia.org/wiki/John_Milton",
-    "quoteUrl": "https://en.wikiquote.org/wiki/John_Milton",
-    "context": "Paradise Lost"
   }
 ]
