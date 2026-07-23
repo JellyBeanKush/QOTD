@@ -1,8 +1,8 @@
 {
-  "quote": "The mind is its own place, and in itself can make a heaven of hell, a hell of heaven.",
-  "author": "John Milton",
-  "sourceUrl": "https://en.wikipedia.org/wiki/John_Milton",
-  "quoteUrl": "https://en.wikiquote.org/wiki/John_Milton",
-  "context": "Paradise Lost",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/John_Milton_Christ%27s_College.jpg/500px-John_Milton_Christ%27s_College.jpg"
+  "quote": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
+  "author": "Albert Camus",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
+  "context": "The Rebel",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg"
 }
