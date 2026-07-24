@@ -1,8 +1,8 @@
 {
-  "quote": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
-  "author": "Albert Camus",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
-  "context": "The Rebel",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg"
+  "quote": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+  "author": "Oprah Winfrey",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Oprah_Winfrey",
+  "context": "Television Interview",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Oprah_Winfrey_2016.jpg/500px-Oprah_Winfrey_2016.jpg"
 }

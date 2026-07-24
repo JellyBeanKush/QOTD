@@ -1,5 +1,13 @@
 [
   {
+    "quote": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+    "author": "Oprah Winfrey",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Oprah_Winfrey",
+    "context": "Television Interview",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Oprah_Winfrey_2016.jpg/500px-Oprah_Winfrey_2016.jpg"
+  },
+  {
     "quote": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
     "author": "Albert Camus",
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
@@ -754,12 +762,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/George_Orwell",
     "quoteUrl": "https://en.wikiquote.org/wiki/George_Orwell#Animal_Farm_(1945)",
     "context": "Preface to Animal Farm"
-  },
-  {
-    "quote": "One cannot think well, love well, sleep well, if one has not dined well.",
-    "author": "Virginia Woolf",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Virginia_Woolf",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Virginia_Woolf",
-    "context": "A Room of One's Own"
   }
 ]
