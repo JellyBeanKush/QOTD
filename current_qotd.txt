@@ -1,8 +1,8 @@
 {
-  "quote": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
-  "author": "Oprah Winfrey",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Oprah_Winfrey",
-  "context": "Television Interview",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Oprah_Winfrey_2016.jpg/500px-Oprah_Winfrey_2016.jpg"
+  "quote": "It always seems impossible until it is done.",
+  "author": "Nelson Mandela",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Nelson_Mandela",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Nelson_Mandela",
+  "context": "Attributed statement",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/500px-Nelson_Mandela_1994.jpg"
 }
