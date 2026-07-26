@@ -1,5 +1,13 @@
 [
   {
+    "quote": "A single day enough for a wise man is enough for a whole lifetime.",
+    "author": "Lucius Annaeus Seneca",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Seneca_the_Younger",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
+    "context": "Letters from a Stoic",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg/500px-Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg"
+  },
+  {
     "quote": "It always seems impossible until it is done.",
     "author": "Nelson Mandela",
     "sourceUrl": "https://en.wikipedia.org/wiki/Nelson_Mandela",
@@ -756,12 +764,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
     "quoteUrl": "https://en.wikiquote.org/wiki/Franklin_D._Roosevelt",
     "context": "First Inaugural Address"
-  },
-  {
-    "quote": "Science is a way of thinking much more than it is a body of knowledge.",
-    "author": "Carl Sagan",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Carl_Sagan",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Carl_Sagan",
-    "context": "The Demon-Haunted World: Science as a Candle in the Dark"
   }
 ]
