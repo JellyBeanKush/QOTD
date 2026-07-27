@@ -1,8 +1,8 @@
 {
-  "quote": "A single day enough for a wise man is enough for a whole lifetime.",
-  "author": "Lucius Annaeus Seneca",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Seneca_the_Younger",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
-  "context": "Letters from a Stoic",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg/500px-Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg"
+  "quote": "The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education.",
+  "author": "Martin Luther King Jr.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Martin_Luther_King_Jr.#1940s",
+  "context": "The Purpose of Education",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Martin_Luther_King%2C_Jr..jpg/500px-Martin_Luther_King%2C_Jr..jpg"
 }
