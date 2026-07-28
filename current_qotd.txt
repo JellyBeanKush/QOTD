@@ -1,8 +1,8 @@
 {
-  "quote": "The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education.",
-  "author": "Martin Luther King Jr.",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Martin_Luther_King_Jr.#1940s",
-  "context": "The Purpose of Education",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Martin_Luther_King%2C_Jr..jpg/500px-Martin_Luther_King%2C_Jr..jpg"
+  "quote": "It is not our abilities that show what we truly are, it is our choices.",
+  "author": "Albus Dumbledore",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Albus_Dumbledore",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Harry_Potter#Harry_Potter_and_the_Chamber_of_Secrets",
+  "context": "Harry Potter and the Chamber of Secrets",
+  "imageUrl": null
 }
