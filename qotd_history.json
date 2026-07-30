@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The beginning of knowledge is the discovery of something we do not understand.",
+    "author": "Frank Herbert",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Frank_Herbert",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Frank_Herbert",
+    "context": "Heretics of Dune",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Frank_Herbert_1984_%28square%29.jpg/500px-Frank_Herbert_1984_%28square%29.jpg"
+  },
+  {
     "quote": "In the end, we will remember not the words of our enemies, but the silence of our friends.",
     "author": "Martin Luther King Jr.",
     "sourceUrl": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
@@ -760,12 +768,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Desmond_Tutu",
     "quoteUrl": "https://en.wikiquote.org/wiki/Desmond_Tutu",
     "context": "Speech in Cape Town, 1984"
-  },
-  {
-    "quote": "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
-    "author": "Helen Keller",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Helen_Keller",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Helen_Keller",
-    "context": "The Story of My Life"
   }
 ]
