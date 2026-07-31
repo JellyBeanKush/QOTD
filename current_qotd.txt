@@ -1,8 +1,8 @@
 {
-  "quote": "The beginning of knowledge is the discovery of something we do not understand.",
-  "author": "Frank Herbert",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Frank_Herbert",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Frank_Herbert",
-  "context": "Heretics of Dune",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Frank_Herbert_1984_%28square%29.jpg/500px-Frank_Herbert_1984_%28square%29.jpg"
+  "quote": "Those who cannot change their minds cannot change anything.",
+  "author": "George Bernard Shaw",
+  "sourceUrl": "https://en.wikipedia.org/wiki/George_Bernard_Shaw",
+  "quoteUrl": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+  "context": "Attributed",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Bernard-Shaw-ILN-1911-original.jpg/500px-Bernard-Shaw-ILN-1911-original.jpg"
 }
