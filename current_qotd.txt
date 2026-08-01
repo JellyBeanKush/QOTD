@@ -1,8 +1,8 @@
 {
-  "quote": "Those who cannot change their minds cannot change anything.",
-  "author": "George Bernard Shaw",
-  "sourceUrl": "https://en.wikipedia.org/wiki/George_Bernard_Shaw",
-  "quoteUrl": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
-  "context": "Attributed",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Bernard-Shaw-ILN-1911-original.jpg/500px-Bernard-Shaw-ILN-1911-original.jpg"
+  "quote": "If you don't like something, change it. If you can't change it, change your attitude.",
+  "author": "Maya Angelou",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Maya_Angelou",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Maya_Angelou",
+  "context": "Interview with the New York Times",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg/500px-Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg"
 }
