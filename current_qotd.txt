@@ -1,8 +1,8 @@
 {
-  "quote": "If you don't like something, change it. If you can't change it, change your attitude.",
-  "author": "Maya Angelou",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Maya_Angelou",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Maya_Angelou",
-  "context": "Interview with the New York Times",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg/500px-Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg"
+  "quote": "The way to get things done is not to mind who gets the credit for doing them.",
+  "author": "Benjamin Jowett",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Benjamin_Jowett",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Benjamin_Jowett",
+  "context": "Benjamin Jowett's Aphorisms",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Photography_of_Benjamin_Jowett.jpg/500px-Photography_of_Benjamin_Jowett.jpg"
 }
