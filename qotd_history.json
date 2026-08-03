@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The way a team plays as a whole determines its success. You may have the greatest bunch of individual stars in the world, but if they don't play together, the club won't be worth a dime.",
+    "author": "Babe Ruth",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Babe_Ruth",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Babe_Ruth",
+    "context": "Babe Ruth's Baseball Advice",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Babe_Ruth2.jpg/500px-Babe_Ruth2.jpg"
+  },
+  {
     "quote": "The way to get things done is not to mind who gets the credit for doing them.",
     "author": "Benjamin Jowett",
     "sourceUrl": "https://en.wikipedia.org/wiki/Benjamin_Jowett",
@@ -764,12 +772,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Blaise_Pascal",
     "quoteUrl": "https://en.wikiquote.org/wiki/Blaise_Pascal",
     "context": "Pensées"
-  },
-  {
-    "quote": "In a gentle way, you can shake the world.",
-    "author": "Mahatma Gandhi",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Mahatma_Gandhi",
-    "context": "Nonviolent Resistance"
   }
 ]
