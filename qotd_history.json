@@ -1,5 +1,13 @@
 [
   {
+    "quote": "If I have seen further, it is by standing on the shoulders of giants.",
+    "author": "Isaac Newton",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Isaac_Newton",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Isaac_Newton",
+    "context": "Letter to Robert Hooke",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg/500px-Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The way a team plays as a whole determines its success. You may have the greatest bunch of individual stars in the world, but if they don't play together, the club won't be worth a dime.",
     "author": "Babe Ruth",
     "sourceUrl": "https://en.wikipedia.org/wiki/Babe_Ruth",
@@ -765,12 +773,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
     "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Einstein",
     "context": "Attributed remark to William Miller"
-  },
-  {
-    "quote": "The heart has its reasons which reason knows nothing of.",
-    "author": "Blaise Pascal",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Blaise_Pascal",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Blaise_Pascal",
-    "context": "Pensées"
   }
 ]
