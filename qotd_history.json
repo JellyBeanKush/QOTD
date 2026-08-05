@@ -1,5 +1,13 @@
 [
   {
+    "quote": "I am not afraid of storms, for I am learning how to sail my ship.",
+    "author": "Louisa May Alcott",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Louisa_May_Alcott",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Louisa_May_Alcott",
+    "context": "Little Women",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Louisa_May_Alcott%2C_c._1870_-_Warren%27s_Portraits%2C_Boston.jpg/500px-Louisa_May_Alcott%2C_c._1870_-_Warren%27s_Portraits%2C_Boston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "If I have seen further, it is by standing on the shoulders of giants.",
     "author": "Isaac Newton",
     "sourceUrl": "https://en.wikipedia.org/wiki/Isaac_Newton",
@@ -766,12 +774,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Isaac_Newton",
     "quoteUrl": "https://en.wikiquote.org/wiki/Isaac_Newton",
     "context": "Letter to Robert Hooke"
-  },
-  {
-    "quote": "The only thing that interferes with my learning is my education.",
-    "author": "Albert Einstein",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Einstein",
-    "context": "Attributed remark to William Miller"
   }
 ]
