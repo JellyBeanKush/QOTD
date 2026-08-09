@@ -1,8 +1,8 @@
 {
-  "quote": "The most common way people give up their power is by thinking they don't have any.",
-  "author": "Alice Walker",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Alice_Walker",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Alice_Walker",
-  "context": "In Search of Our Mothers' Gardens",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Alice_Walker.jpg/500px-Alice_Walker.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "I am not bound to win, but I am bound to be true. I am not bound to succeed, but I am bound to live up to what light I have.",
+  "author": "Abraham Lincoln",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Abraham_Lincoln",
+  "context": "Attributed remark to James S. Rollins",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg/500px-Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
