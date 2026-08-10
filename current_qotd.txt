@@ -1,8 +1,8 @@
 {
-  "quote": "I am not bound to win, but I am bound to be true. I am not bound to succeed, but I am bound to live up to what light I have.",
-  "author": "Abraham Lincoln",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Abraham_Lincoln",
-  "context": "Attributed remark to James S. Rollins",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg/500px-Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "The task of the modern educator is not to cut down jungles, but to irrigate deserts.",
+  "author": "C. S. Lewis",
+  "sourceUrl": "https://en.wikipedia.org/wiki/C._S._Lewis",
+  "quoteUrl": "https://en.wikiquote.org/wiki/C._S._Lewis",
+  "context": "The Abolition of Man",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/CS_Lewis_photo_on_dust_jacket.jpg/500px-CS_Lewis_photo_on_dust_jacket.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
