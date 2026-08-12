@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The limits of my language mean the limits of my world.",
+    "author": "Ludwig Wittgenstein",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ludwig_Wittgenstein",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
+    "context": "Tractatus Logico-Philosophicus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Ludwig_Wittgenstein_1929.jpg/500px-Ludwig_Wittgenstein_1929.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The value of a man should be seen in what he gives and not in what he is able to receive.",
     "author": "Albert Einstein",
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
@@ -772,12 +780,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Iris_Murdoch",
     "quoteUrl": "https://en.wikiquote.org/wiki/Iris_Murdoch",
     "context": "The Sovereignty of Good"
-  },
-  {
-    "quote": "The way to get started is to quit talking and begin doing.",
-    "author": "Walt Disney",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Walt_Disney",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Walt_Disney",
-    "context": "Attributed advice"
   }
 ]
