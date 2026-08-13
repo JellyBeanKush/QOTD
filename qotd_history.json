@@ -1,5 +1,13 @@
 [
   {
+    "quote": "I am fond of pigs. Dogs look up to us. Cats look down on us. Pigs treat us as equals.",
+    "author": "Winston Churchill",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Winston_Churchill",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "context": "Attributed remark",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/500px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The limits of my language mean the limits of my world.",
     "author": "Ludwig Wittgenstein",
     "sourceUrl": "https://en.wikipedia.org/wiki/Ludwig_Wittgenstein",
@@ -773,12 +781,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Oscar_Wilde",
     "quoteUrl": "https://en.wikiquote.org/wiki/Oscar_Wilde",
     "context": "The Picture of Dorian Gray"
-  },
-  {
-    "quote": "I am essentially a person who looks at the world, not from a position in it, but from somewhere outside it.",
-    "author": "Iris Murdoch",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Iris_Murdoch",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Iris_Murdoch",
-    "context": "The Sovereignty of Good"
   }
 ]
