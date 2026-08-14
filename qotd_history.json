@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The truth is rarely pure and never simple.",
+    "author": "Oscar Wilde",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oscar_Wilde",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "context": "The Importance of Being Earnest",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Oscar_Wilde_by_Napoleon_Sarony._Three-quarter-length_photograph%2C_seated_%28cropped%29.jpg/500px-Oscar_Wilde_by_Napoleon_Sarony._Three-quarter-length_photograph%2C_seated_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "I am fond of pigs. Dogs look up to us. Cats look down on us. Pigs treat us as equals.",
     "author": "Winston Churchill",
     "sourceUrl": "https://en.wikipedia.org/wiki/Winston_Churchill",
@@ -774,12 +782,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
     "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Einstein",
     "context": "Attributed"
-  },
-  {
-    "quote": "I have no desire to be easily understood. To be understood is to be found out.",
-    "author": "Oscar Wilde",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Oscar_Wilde",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Oscar_Wilde",
-    "context": "The Picture of Dorian Gray"
   }
 ]
