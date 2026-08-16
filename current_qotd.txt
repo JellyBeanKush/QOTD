@@ -1,8 +1,8 @@
 {
-  "quote": "The only thing we have to fear is fear itself.",
-  "author": "Franklin D. Roosevelt",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Franklin_D._Roosevelt",
-  "context": "1933 First Inaugural Address",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg/500px-FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "The way to get started is to quit talking and begin doing.",
+  "author": "Walt Disney",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Walt_Disney",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Walt_Disney",
+  "context": "General attributed wisdom",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Walt_Disney_1946_%28cropped2%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
 }
