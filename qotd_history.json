@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The way to right wrongs is to turn the light of truth upon them.",
+    "author": "Ida B. Wells",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ida_B._Wells",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Ida_B._Wells",
+    "context": "Speech to the National Negro Press Association",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Mary_Garrity_-_Ida_B._Wells-Barnett_-_Google_Art_Project_-_restoration_crop.jpg/500px-Mary_Garrity_-_Ida_B._Wells-Barnett_-_Google_Art_Project_-_restoration_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The roots of education are bitter, but the fruit is sweet.",
     "author": "Aristotle",
     "sourceUrl": "https://en.wikipedia.org/wiki/Aristotle",
@@ -778,12 +786,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Friedrich_Nietzsche",
     "quoteUrl": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
     "context": "Attributed to Nietzsche in various collections"
-  },
-  {
-    "quote": "The most wasted of all days is one without laughter.",
-    "author": "Nicolas Chamfort",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Nicolas_Chamfort",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Nicolas_Chamfort",
-    "context": "Maximes et Pensées"
   }
 ]
