@@ -1,5 +1,13 @@
 [
   {
+    "quote": "I am essentially a man who loves to be alone, but I also love to have a good time and I have a great capacity for friendship.",
+    "author": "Richard Feynman",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Richard_Feynman",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Richard_Feynman",
+    "context": "What Do You Care What Other People Think?",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Richard_Feynman_Nobel.jpg/500px-Richard_Feynman_Nobel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The way to right wrongs is to turn the light of truth upon them.",
     "author": "Ida B. Wells",
     "sourceUrl": "https://en.wikipedia.org/wiki/Ida_B._Wells",
@@ -779,12 +787,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Benjamin_Jowett",
     "quoteUrl": "https://en.wikiquote.org/wiki/Benjamin_Jowett",
     "context": "Attributed remark"
-  },
-  {
-    "quote": "If you want to live a happy life, tie it to a goal, not to people or things.",
-    "author": "Friedrich Nietzsche",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Friedrich_Nietzsche",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
-    "context": "Attributed to Nietzsche in various collections"
   }
 ]
