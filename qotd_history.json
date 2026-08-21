@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The way to develop self-confidence is to do the thing you fear and get a record of successful experiences behind you.",
+    "author": "William Jennings Bryan",
+    "sourceUrl": "https://en.wikipedia.org/wiki/William_Jennings_Bryan",
+    "quoteUrl": "https://en.wikiquote.org/wiki/William_Jennings_Bryan",
+    "context": "Speech regarding self-confidence",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Portrait_of_Secretary_William_Jennings_Bryan_of_Nebraska%2C_1913.jpeg/500px-Portrait_of_Secretary_William_Jennings_Bryan_of_Nebraska%2C_1913.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The only journey is the one within.",
     "author": "Rainer Maria Rilke",
     "sourceUrl": "https://en.wikipedia.org/wiki/Rainer_Maria_Rilke",
@@ -781,12 +789,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
     "quoteUrl": "https://en.wikiquote.org/wiki/Abraham_Lincoln",
     "context": "Attributed statement recorded in James Grant Wilson's 'The Life of General Ulysses S. Grant'"
-  },
-  {
-    "quote": "I am not what happened to me, I am what I choose to become.",
-    "author": "Carl Jung",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Carl_Jung",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Carl_Jung",
-    "context": "General Collected Works"
   }
 ]
