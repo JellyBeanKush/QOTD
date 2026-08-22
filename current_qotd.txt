@@ -1,8 +1,8 @@
 {
-  "quote": "The way to develop self-confidence is to do the thing you fear and get a record of successful experiences behind you.",
-  "author": "William Jennings Bryan",
-  "sourceUrl": "https://en.wikipedia.org/wiki/William_Jennings_Bryan",
-  "quoteUrl": "https://en.wikiquote.org/wiki/William_Jennings_Bryan",
-  "context": "Speech regarding self-confidence",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Portrait_of_Secretary_William_Jennings_Bryan_of_Nebraska%2C_1913.jpeg/500px-Portrait_of_Secretary_William_Jennings_Bryan_of_Nebraska%2C_1913.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
+  "author": "J.K. Rowling",
+  "sourceUrl": "https://en.wikipedia.org/wiki/J.K._Rowling",
+  "quoteUrl": "https://en.wikiquote.org/wiki/J.K._Rowling",
+  "context": "Harry Potter and the Goblet of Fire",
+  "imageUrl": null
 }

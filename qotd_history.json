@@ -1,5 +1,13 @@
 [
   {
+    "quote": "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
+    "author": "J.K. Rowling",
+    "sourceUrl": "https://en.wikipedia.org/wiki/J.K._Rowling",
+    "quoteUrl": "https://en.wikiquote.org/wiki/J.K._Rowling",
+    "context": "Harry Potter and the Goblet of Fire",
+    "imageUrl": null
+  },
+  {
     "quote": "The way to develop self-confidence is to do the thing you fear and get a record of successful experiences behind you.",
     "author": "William Jennings Bryan",
     "sourceUrl": "https://en.wikipedia.org/wiki/William_Jennings_Bryan",
@@ -782,12 +790,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Aristotle",
     "quoteUrl": "https://en.wikiquote.org/wiki/Aristotle",
     "context": "Diogenes Laertius, Lives of Eminent Philosophers"
-  },
-  {
-    "quote": "I am not bound to win, but I am bound to be true. I am not bound to succeed, but I am bound to live up to what light I have.",
-    "author": "Abraham Lincoln",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Abraham_Lincoln",
-    "context": "Attributed statement recorded in James Grant Wilson's 'The Life of General Ulysses S. Grant'"
   }
 ]
