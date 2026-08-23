@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The journey of a thousand miles begins with one step.",
+    "author": "Lao Tzu",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Lao_Tzu",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Lao_Tzu",
+    "context": "Tao Te Ching",
+    "imageUrl": null
+  },
+  {
     "quote": "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
     "author": "J.K. Rowling",
     "sourceUrl": "https://en.wikipedia.org/wiki/J.K._Rowling",
@@ -783,12 +791,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Steve_Jobs",
     "quoteUrl": "https://en.wikiquote.org/wiki/Steve_Jobs",
     "context": "Stanford Commencement Address"
-  },
-  {
-    "quote": "The roots of education are bitter, but the fruit is sweet.",
-    "author": "Aristotle",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Aristotle",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Aristotle",
-    "context": "Diogenes Laertius, Lives of Eminent Philosophers"
   }
 ]

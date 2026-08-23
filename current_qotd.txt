@@ -1,8 +1,8 @@
 {
-  "quote": "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
-  "author": "J.K. Rowling",
-  "sourceUrl": "https://en.wikipedia.org/wiki/J.K._Rowling",
-  "quoteUrl": "https://en.wikiquote.org/wiki/J.K._Rowling",
-  "context": "Harry Potter and the Goblet of Fire",
+  "quote": "The journey of a thousand miles begins with one step.",
+  "author": "Lao Tzu",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lao_Tzu",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Lao_Tzu",
+  "context": "Tao Te Ching",
   "imageUrl": null
 }
