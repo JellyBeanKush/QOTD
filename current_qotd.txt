@@ -1,8 +1,8 @@
 {
-  "quote": "The life of the nation is secure only while the nation is honest, truthful, and virtuous.",
-  "author": "Frederick Douglass",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Frederick_Douglass",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Frederick_Douglass",
-  "context": "Lecture in Elmira, New York",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Frederick_Douglass_%28circa_1879%29_%28cropped%29.jpg/500px-Frederick_Douglass_%28circa_1879%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "The way to achieve your own success is to be willing to help somebody else get it first.",
+  "author": "Iyanla Vanzant",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Iyanla_Vanzant",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Iyanla_Vanzant",
+  "context": "Interviews and Speeches",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Iyanla_Vanzant_2019.png/500px-Iyanla_Vanzant_2019.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
