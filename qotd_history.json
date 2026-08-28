@@ -1,5 +1,13 @@
 [
   {
+    "quote": "The way to love anything is to realize that it may be lost.",
+    "author": "G. K. Chesterton",
+    "sourceUrl": "https://en.wikipedia.org/wiki/G._K._Chesterton",
+    "quoteUrl": "https://en.wikiquote.org/wiki/G._K._Chesterton",
+    "context": "The Innocence of Father Brown",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Gilbert_Chesterton.jpg/500px-Gilbert_Chesterton.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The way to get ahead is to start now.",
     "author": "William Shakespeare",
     "sourceUrl": "https://en.wikipedia.org/wiki/William_Shakespeare",
@@ -788,12 +796,5 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
     "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
     "context": "The Rebel"
-  },
-  {
-    "quote": "The happiness of your life depends upon the quality of your thoughts.",
-    "author": "Marcus Aurelius",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Marcus_Aurelius",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Marcus_Aurelius",
-    "context": "Meditations"
   }
 ]
