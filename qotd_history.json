@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Nothing is more difficult, and therefore more precious, than to be able to decide.",
+    "author": "Napoleon Bonaparte",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Napoleon",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Napoleon_Bonaparte",
+    "context": "Correspondence of Napoleon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/500px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "The only way to do great work is to love what you do.",
     "author": "Steve Jobs",
     "sourceUrl": "https://en.wikipedia.org/wiki/Steve_Jobs",
@@ -790,13 +798,5 @@
     "quoteUrl": "https://en.wikiquote.org/wiki/Jules_Verne",
     "context": "The Mysterious Island",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Jules_Verne_by_%C3%89tienne_Carjat.jpg/500px-Jules_Verne_by_%C3%89tienne_Carjat.jpg"
-  },
-  {
-    "quote": "It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood.",
-    "author": "Theodore Roosevelt",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Theodore_Roosevelt#Citizenship_in_a_Republic_.281910.29",
-    "context": "Citizenship in a Republic",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg/500px-Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg"
   }
 ]
