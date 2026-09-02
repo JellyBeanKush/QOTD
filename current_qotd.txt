@@ -1,8 +1,8 @@
 {
-  "quote": "Nothing is more difficult, and therefore more precious, than to be able to decide.",
-  "author": "Napoleon Bonaparte",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Napoleon",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Napoleon_Bonaparte",
-  "context": "Correspondence of Napoleon",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/500px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "The way is not in the sky. The way is in the heart.",
+  "author": "Gautama Buddha",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Gautama_Buddha",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
+  "context": "Dhammapada",
+  "imageUrl": null
 }
