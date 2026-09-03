@@ -1,8 +1,8 @@
 {
-  "quote": "The way is not in the sky. The way is in the heart.",
-  "author": "Gautama Buddha",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Gautama_Buddha",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
-  "context": "Dhammapada",
-  "imageUrl": null
+  "quote": "If one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.",
+  "author": "Henry David Thoreau",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Henry_David_Thoreau",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Henry_David_Thoreau",
+  "context": "Walden",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg/500px-Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
