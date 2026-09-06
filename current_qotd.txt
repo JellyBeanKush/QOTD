@@ -1,8 +1,8 @@
 {
-  "quote": "In the depth of winter, I finally learned that within me there lay an invincible summer.",
-  "author": "Albert Camus",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
-  "context": "Return to Tipasa",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+  "author": "Winston Churchill",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Winston_Churchill",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Winston_Churchill#Attributed",
+  "context": "Attributed",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/500px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
