@@ -1,8 +1,8 @@
 {
-  "quote": "The way of the creative work is to look at things with the eyes of a child, who sees everything as if for the first time.",
-  "author": "Henri Matisse",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Henri_Matisse",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Henri_Matisse",
-  "context": "Matisse on Art",
-  "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Henri_Matisse%2C_1913%2C_photograph_by_Alvin_Langdon_Coburn.jpg/500px-Henri_Matisse%2C_1913%2C_photograph_by_Alvin_Langdon_Coburn.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "The person who reads a book lives a thousand lives before he dies. The man who never reads lives only one.",
+  "author": "George R. R. Martin",
+  "sourceUrl": "https://en.wikipedia.org/wiki/George_R._R._Martin",
+  "quoteUrl": "https://en.wikiquote.org/wiki/George_R._R._Martin",
+  "context": "A Dance with Dragons",
+  "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/George_R._R._Martin_%2854743316729%29_%28cropped%29.jpg/500px-George_R._R._Martin_%2854743316729%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
