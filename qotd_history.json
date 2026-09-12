@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Character is like a tree and reputation like its shadow. The shadow is what we think of it; the tree is the real thing.",
+    "author": "Abraham Lincoln",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Abraham_Lincoln",
+    "context": "Attributed to Lincoln",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/500px-Abraham_Lincoln_O-77_matte_collodion_print.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "If you don't read the newspaper, you're uninformed. If you read the newspaper, you're misinformed.",
     "author": "Mark Twain",
     "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Twain",
@@ -790,13 +798,5 @@
     "quoteUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
     "context": "Tractatus Logico-Philosophicus",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Ludwig_Wittgenstein_1929.jpg/500px-Ludwig_Wittgenstein_1929.jpg"
-  },
-  {
-    "quote": "The way to love anything is to realize that it may be lost.",
-    "author": "G. K. Chesterton",
-    "sourceUrl": "https://en.wikipedia.org/wiki/G._K._Chesterton",
-    "quoteUrl": "https://en.wikiquote.org/wiki/G._K._Chesterton",
-    "context": "The Complete Thinker",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Gilbert_Chesterton.jpg/500px-Gilbert_Chesterton.jpg"
   }
 ]
