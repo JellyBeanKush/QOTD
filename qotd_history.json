@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Beware; for I am fearless, and therefore powerful.",
+    "author": "Mary Shelley",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Mary_Shelley",
+    "quoteUrl": "https://en.wikiquote.org/wiki/Mary_Shelley",
+    "context": "Frankenstein",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Mary_Wollstonecraft_Shelley_Rothwell.tif/lossy-page1-500px-Mary_Wollstonecraft_Shelley_Rothwell.tif.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
     "quote": "Character is like a tree and reputation like its shadow. The shadow is what we think of it; the tree is the real thing.",
     "author": "Abraham Lincoln",
     "sourceUrl": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
@@ -790,13 +798,5 @@
     "quoteUrl": "https://en.wikiquote.org/wiki/Walt_Disney",
     "context": "Interview and public speaking",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Walt_Disney_1946_%28cropped2%29.JPG"
-  },
-  {
-    "quote": "The limits of my language mean the limits of my world.",
-    "author": "Ludwig Wittgenstein",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Ludwig_Wittgenstein",
-    "quoteUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
-    "context": "Tractatus Logico-Philosophicus",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Ludwig_Wittgenstein_1929.jpg/500px-Ludwig_Wittgenstein_1929.jpg"
   }
 ]
