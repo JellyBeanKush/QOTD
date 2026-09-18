@@ -1,8 +1,8 @@
 {
-  "quote": "The only real mistake is the one from which we learn nothing.",
-  "author": "Henry Ford",
-  "sourceUrl": "https://en.wikipedia.org/wiki/Henry_Ford",
-  "quoteUrl": "https://en.wikiquote.org/wiki/Henry_Ford",
-  "context": "Attributed",
-  "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Ford_portrait_1915_original_%283x4_cropped%29.png/500px-Henry_Ford_portrait_1915_original_%283x4_cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  "quote": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
+  "author": "Albert Camus",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Albert_Camus",
+  "quoteUrl": "https://en.wikiquote.org/wiki/Albert_Camus",
+  "context": "The Rebel",
+  "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
 }
